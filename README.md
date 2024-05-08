@@ -27,7 +27,7 @@ pnpm build
 pnpm run preview
 
 # Production
-
+pnpm start
 ```
 
 ## Build Docker Image
@@ -39,5 +39,5 @@ docker build -t community-web:latest .
 ## Run Docker Container
 
 ```bash
-docker run -d -it -p 9996:3000 --restart=always --name community-web community-web:latest
+docker run -d -it -p 9995:4321 --restart=always --name community-web community-web:latest
 ```

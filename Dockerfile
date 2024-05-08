@@ -15,6 +15,7 @@ COPY --from=build /app/dist ./dist
 
 RUN npm i -g pnpm && pnpm i --prod
 
+ENV HOST=0.0.0.0
 EXPOSE 4321
 
 ENTRYPOINT [ "pnpm", "start" ]
