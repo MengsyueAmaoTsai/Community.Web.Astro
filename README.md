@@ -12,7 +12,7 @@ pnpm i
 pnpm run dev
 ```
 
-Then visit <http://localhost:9995>
+Then visit <http://localhost:9994>
 
 ## Build for Production
 
@@ -39,5 +39,5 @@ docker build -t community-web:latest .
 ## Run Docker Container
 
 ```bash
-docker run -d -it -p 9995:4321 --restart=always --name community-web community-web:latest
+docker run -d -it -p 9994:4321 --restart=always --name community-web community-web:latest
 ```

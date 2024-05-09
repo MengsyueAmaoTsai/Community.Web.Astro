@@ -1,7 +1,7 @@
 #!/bin/bash
 
 IMAGE_NAME=community-web:latest
-SERVICE_PORT=9995
+SERVICE_PORT=9994
 CONTAINER_PORT=4321
 SERVICE_NAME=community-web
 
