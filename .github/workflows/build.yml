@@ -1,4 +1,4 @@
-name: Nuxt Build 
+name: Astro Build 
 
 on:
   push:
