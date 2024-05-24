@@ -16,7 +16,7 @@ FROM node:${NODE_VERSION} AS runtime
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml ./
-COPY --from=build /app/dist ./dist
+COPY --from=build /app/dist ./
 
 RUN npm i -g pnpm && \
     pnpm i --prod
@@ -24,4 +24,4 @@ RUN npm i -g pnpm && \
 ENV HOST=0.0.0.0
 EXPOSE 4321
 
-ENTRYPOINT [ "pnpm", "start" ]
+ENTRYPOINT [ "node", "./server/entry.mjs" ]
