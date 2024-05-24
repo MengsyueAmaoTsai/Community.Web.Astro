@@ -1,0 +1,31 @@
+---
+type PagedResponse<TResponse> = {
+    items: TResponse[];
+}
+
+type SignalSourceResponse = {
+    id: string;
+    name: string;
+    description: string;
+}
+
+
+const response = await fetch('http://localhost:11000/api/v1/signal-sources');
+
+const signals = await response.json() as PagedResponse<SignalSourceResponse>;
+
+
+---
+
+<h1>Signal Sources</h1>
+
+{
+    signals.items.map(signal => (
+        <div>
+            <a href={`/signal-sources/${signal.id}`}>{signal.id}</a>
+            <h2>{signal.name}</h2>
+            <p>{signal.description}</p>
+        </div>
+    ))
+}
+

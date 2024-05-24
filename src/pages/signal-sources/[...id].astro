@@ -1,0 +1,15 @@
+---
+const { id } = Astro.params;
+
+
+const response = await fetch(`http://localhost:11000/api/v1/signal-sources/${id}`);
+
+const signal = await response.json();
+
+---
+
+<div>{signal.id}</div>
+<div>{signal.name}</div>
+<div>{signal.description}</div>
+
+<a href={`/signal-sources`}>Return</a>
