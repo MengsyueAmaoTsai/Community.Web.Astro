@@ -7,9 +7,8 @@ type SignalSourceResponse = {
     id: string;
     name: string;
     description: string;
-    totalReturns: number;
-    drawdownPercent: number;
-    maxDrawdownPercent: number;
+    winRate: number;
+    returns: number;
 }
 
 const response = await fetch('http://localhost:11000/api/v1/signal-sources');
@@ -41,9 +40,10 @@ const signals = await response.json() as PagedResponse<SignalSourceResponse>;
             <a href={`/signal-sources/${signal.id}`}>{signal.id}</a>
             <h2>{signal.name}</h2>
             <p>{signal.description}</p>
-            <p>{signal.totalReturns}</p>
-            <p>{signal.drawdownPercent}</p>
-            <p>{signal.maxDrawdownPercent}</p>
+            <p>{signal.winRate}</p>
+            <p>{signal.returns}</p>
+
+            <button>Subscribe</button>
         </div>
     ))
 }
