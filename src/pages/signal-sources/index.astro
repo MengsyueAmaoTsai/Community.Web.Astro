@@ -9,15 +9,22 @@ type SignalSourceResponse = {
     description: string;
 }
 
-
 const response = await fetch('http://localhost:11000/api/v1/signal-sources');
-
 const signals = await response.json() as PagedResponse<SignalSourceResponse>;
-
-
 ---
 
 <h1>Signal Sources</h1>
+
+<select>
+    <option value="YTD">YTD</option>
+    <option value="1 Month">1 Month</option>
+    <option value="3 Months">3 Months</option>
+    <option value="6 Months">6 Months</option>
+    <option value="1 Year">1 Year</option>
+    <option value="3 Years">3 Years</option>
+    <option value="5 Years">5 Years</option>
+    <option value="All">All</option>
+</select>
 
 {
     signals.items.map(signal => (
