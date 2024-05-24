@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-    IMAGE_NAME: identity-web
+    IMAGE_NAME: community-web
     TAG: latest
 
 jobs:
