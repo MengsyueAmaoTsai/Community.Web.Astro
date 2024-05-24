@@ -17,6 +17,7 @@ const signals = await response.json() as PagedResponse<SignalSourceResponse>;
 ---
 
 <h1>Signal Sources</h1>
+<button>Create New</button>
 
 <select>
     <option value="YTD">YTD</option>
@@ -27,6 +28,11 @@ const signals = await response.json() as PagedResponse<SignalSourceResponse>;
     <option value="3 Years">3 Years</option>
     <option value="5 Years">5 Years</option>
     <option value="All">All</option>
+</select>
+
+<select>
+    <option value="Table">Table</option>
+    <option value="List">List</option>
 </select>
 
 {
