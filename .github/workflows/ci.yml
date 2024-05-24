@@ -1,4 +1,4 @@
-name: Astro Build 
+name: Continuous Integration
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
 
     - name: Install dependencies
       run: npm i -g pnpm && pnpm i
-        
+    
     - name: Build
       run: pnpm run build
 

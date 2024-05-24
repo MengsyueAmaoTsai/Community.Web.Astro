@@ -1,22 +1,27 @@
 #!/bin/bash
 
-IMAGE_NAME=community-web:latest
+SERVICE_NAME=community-web
+IMAGE_NAME=community-web
+TAG=latest
 SERVICE_PORT=9994
 CONTAINER_PORT=4321
-SERVICE_NAME=community-web
 
-case $1 in 
+
+case $1 in
     build)
         docker build -t $IMAGE_NAME .
         ;;
+    pull)
+        docker pull msat7201/$IMAGE_NAME:$TAG
+        ;;
     start)
-        docker run -d -it -p $SERVICE_PORT:$CONTAINER_PORT --restart=always --name $SERVICE_NAME $IMAGE_NAME
+        docker run -d -it -p $SERVICE_PORT:$CONTAINER_PORT --restart=always --name $SERVICE_NAME msat7201/$IMAGE_NAME:$TAG
         ;;
     stop)
-        docker stop $SERVICE_NAME && docker rm $SERVICE_NAME
+        docker stop $SERVICE_NAME && docker rm $SERVICE_NAME || true  
         ;;
     restart)
-        ./cmd build
+        ./cmd pull
         ./cmd stop
         ./cmd start
         ;;

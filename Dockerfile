@@ -12,7 +12,7 @@ RUN npm i -g pnpm && \
 COPY . .
 RUN pnpm run build
 
-FROM node:${NODE_VERSION} AS production
+FROM node:${NODE_VERSION} AS runtime
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml ./
