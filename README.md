@@ -2,6 +2,8 @@
 
 [![RichillCapital.Community.Web CI](https://github.com/MengsyueAmaoTsai/Community.Web.Astro/actions/workflows/ci.yml/badge.svg)](https://github.com/MengsyueAmaoTsai/Community.Web.Astro/actions/workflows/ci.yml)
 
+[![RichillCapital.Community.Web CD](https://github.com/MengsyueAmaoTsai/Community.Web.Astro/actions/workflows/cd.yml/badge.svg)](https://github.com/MengsyueAmaoTsai/Community.Web.Astro/actions/workflows/cd.yml)
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
