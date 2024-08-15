@@ -1,0 +1,45 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const response = await fetch('http://localhost:11000/api/v1/signal-sources');
+const signalSources = await response.json();
+
+---
+
+
+<Layout title="Welcome to Astro.">
+	<div>
+        <h1>All signal sources</h1>
+        
+        {signalSources.length === 0 && <div>No signal sources available.</div>}
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Created time</th>
+                    <th>Actions</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+                {
+                    signalSources.map((signalSource) => (
+                        <tr>
+                            <td>{signalSource.id}</td>
+                            <td>{signalSource.name}</td>
+                            <td>{signalSource.description}</td>
+                            <td>{signalSource.createdTime}</td>
+                            <td>
+                                <button>Subscribe now</button>
+                            </td>
+                        </tr>
+                    ))
+                }
+            </tbody>
+        </table>
+    </div>
+</Layout>
