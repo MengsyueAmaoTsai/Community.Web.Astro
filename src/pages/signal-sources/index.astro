@@ -1,8 +1,15 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
+type SignalSourceResponse = {
+    id: string;
+    name: string;
+    description: string;
+    createdTime: Date;
+};
+
 const response = await fetch('http://localhost:11000/api/v1/signal-sources');
-const signalSources = await response.json();
+const signalSources: SignalSourceResponse[] = await response.json();
 
 ---
 
