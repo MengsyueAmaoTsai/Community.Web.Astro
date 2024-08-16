@@ -41,20 +41,37 @@ const menuItems: MenuItem[] = [
 		<title>{title} - Richill Capital Community</title>
 	</head>
 	<body>
-		<div>Richill Capital | Community</div>
-		<div>
-			{
-				menuItems.map(item => (
-					<a href={ item.route }>{ item.title }</a>
-				))
-			}
+		<div class="app-index">
+			<div class="app-header"></div>
+	
+			<div class="layout-container">
+				<main>
+					<div id="RouterOutlet">
+						<slot />
+					</div>
+				</main>
+			</div>
+	
+			<div class="app-footer"></div>
 		</div>
-
-		<input type="text" placeholder="Search apps, games, movies, and more">
-
-		<div>Sign in</div>
 	</body>
 </html>
 
 <style is:global>
+	.layout-container {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		flex: 1 1 0%;
+	}
+
+	main {
+		width: calc(100% - calc(100px + 2 * 3rem));
+		max-width: 1996px;
+	}
+
+	#RouterOutlet {
+		padding: 0px;
+		min-height: 90vh;
+	}
 </style>
