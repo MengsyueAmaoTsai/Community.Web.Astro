@@ -18,6 +18,21 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<header>
+			<div class="nav-buttons-container">
+				<div>
+					<button>Home</button>
+					<button>Trading apps</button>
+					<button>Signal sources</button>
+					<button>About</button>
+				</div>
+			</div>
+			<div>
+				<input type="text" placeholder="Search apps, signal sources, and more"/>
+				<div class="sign-in-container">
+					<div>Sign in</div>
+					<button><img src="/public/icons/person-loggedout-light.svg"/></button>
+				</div>
+			</div>
 		</header>
 
 		<slot />
