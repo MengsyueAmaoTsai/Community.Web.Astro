@@ -1,15 +1,104 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+type ProductCollectionItemModel = {
+	imageUrl: string;
+	title: string;
+	price: number;
+	rating: number;
+	category: string;	
+}
+
+const topFeeApps: ProductCollectionItemModel[] = [
+	{
+		imageUrl: 'https://via.placeholder.com/150',
+		title: 'Line Desktop',
+		price: 0,
+		rating: 2.8,
+		category: 'Social',
+	},
+	{
+		imageUrl: 'https://via.placeholder.com/150',
+		title: 'Netflix',
+		price: 0,
+		rating: 2.9,
+		category: 'Entertainment',
+	},
+	{
+		imageUrl: 'https://via.placeholder.com/150',
+		title: 'iCloud',
+		price: 0,
+		rating: 2.8,
+		category: 'Productivity',
+	},
+	{
+		imageUrl: 'https://via.placeholder.com/150',
+		title: 'WhatsApp',
+		price: 0,
+		rating: 3.9,
+		category: 'Social',
+	},
+	{
+		imageUrl: 'https://via.placeholder.com/150',
+		title: 'iTunes',
+		price: 0,
+		rating: 1.8,
+		category: 'Music',
+	},
+	{
+		imageUrl: 'https://via.placeholder.com/150',
+		title: 'WeChat',
+		price: 0,
+		rating: 3.1,
+		category: 'Social',
+	},
+	{
+		imageUrl: 'https://via.placeholder.com/150',
+		title: 'Instagram',
+		price: 0,
+		rating: 4.3,
+		category: 'Socail',
+	},
+	{
+		imageUrl: 'https://via.placeholder.com/150',
+		title: 'Spotify Music',
+		price: 0,
+		rating: 3.3,
+		category: 'Music',
+	}
+]
 ---
 
-<Layout title="Welcome to Astro.">
-	<div class="web-container">
-	
+<Layout title="Home">
+	<div>
+		
+		<!--Top free apps product collection -->
+		<div>
+			<!--Product collection title -->
+			<div>Top free apps</div>
+			
+			<!--Product collection items -->
+			{
+				topFeeApps.map((product) => (
+					<div>
+						<div>
+							<img src={product.imageUrl} alt={product.title} />
+						</div>
+
+						<div>
+							<div>{product.title}</div>
+							<div>{product.price}</div>
+							<div>{product.rating}</div>
+							<div>{product.category}</div>
+						</div>
+					</div>
+				))
+			}
+			<div>
+			</div>
+		</div>
 	</div>
 </Layout>
 
 <style>
-	.web-container {
-	}
 </style>
