@@ -17,7 +17,13 @@ interface IApiService {
 
 class ApiService implements IApiService {
 	public listTradingApps = async (): Promise<TradingAppResponse[]> => {
-		throw new Error("Method not implemented.");
+		const response = await fetch(`${BASE_ADDRESS}/api/v1/trading-apps`);
+
+		if (!response.ok) {
+			throw new Error("Failed to fetch trading apps");
+		}
+
+		return response.json();
 	};
 
 	public listSignalSources = async (): Promise<SignalSourceResponse[]> => {
