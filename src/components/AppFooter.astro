@@ -95,7 +95,9 @@ const footerMenuGroups = [
                                 {
                                     group.items.map(item => (
                                         <div class="menuitem">
-                                            <button>{ item.title }</button>
+                                            <button>
+                                                { item.title }
+                                            </button>
                                         </div>
                                     ))
                                 }
@@ -112,3 +114,34 @@ const footerMenuGroups = [
         </div>
     </footer>
 </div>
+
+<style>
+	.footer-container {
+		background-color: hsl(240, 5.9%, 11%);
+		justify-content: center;
+		margin-top: 48px;
+		display: flex;
+	}
+	
+    .footer-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0px 38px;
+    }
+    
+    .footer-primary-menu {
+        --card-spacing: var(--sl-spacing-small);
+        justify-content: flex-start;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--card-spacing);
+    }
+
+    .menu-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: calc((100% - var(--card-spacing)*(var(--footer-column-num) - 1)) / var(--footer-column-num));
+    }
+</style>
