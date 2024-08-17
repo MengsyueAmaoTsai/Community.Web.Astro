@@ -24,9 +24,11 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<div class="app-index">
-            <AppHeader/>
+            <div class="header-shimmer loaded">
+                <AppHeader/>
+            </div>
 
-			<div class="layout-container">
+            <div class="layout-container">
 				<main>
 					<div id="RouterOutlet">
 						<slot/>
@@ -34,13 +36,13 @@ const { title } = Astro.props;
 					<div class="scroll-to-top-button"></div>
 				</main>
 			</div>
-
-            <AppFooter />
+                
+            <div class="footer-shimmer loaded">
+                <AppFooter />
+            </div>
 		</div>
 	</body>
 </html>
 
 <style is:global>
-
-
 </style>

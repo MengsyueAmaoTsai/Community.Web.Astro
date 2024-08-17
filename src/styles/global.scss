@@ -79,7 +79,8 @@ html, body {
     scroll-behavior: smooth;
     font-family: $body-font;
     font-feature-settings: "fina" on, "init" on;
-    // Color and background
+    color: var(--theme-font-color);
+    background-color: var(--theme-background-color);
 }
 
 @media (max-width: 575px) {

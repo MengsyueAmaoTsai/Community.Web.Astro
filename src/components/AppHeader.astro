@@ -20,13 +20,13 @@ const items = [
     },
 ]
 ---
-
 <div class="app-header">
     <header class="sticky">
         <nav>
             <div class="nav-bar">
                 <div class="navbar-search-container">
-                    <div class="skip-to-main"></div>
+                    <div class="skip-to-main">
+                    </div>
                     
                     <div class="nav-buttons-container">
                         <Brand />
@@ -45,9 +45,35 @@ const items = [
                     </div>
 
                     <div class="right-elements">
+                        <div class="mobile-button-container"></div>
+                        
+                        <div class="auto-complete-app-search">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <input type="text" placeholder="Search apps, games, movies, and more"> <!-- Placeholder NOT IMPLMENETED -->
+                            </div>
+                        </div>
+
+                        <div class="right-button-container">
+                            <div class="store-button-container">
+                                <button>Open Store app</button> <!-- Placeholder NOT IMPLMENETED -->
+                            </div>
+                            <div class="current-user-shimmer">
+                                <div class="auth-control user-circle-btn">
+                                    <div class="sign-in-container">
+                                        <div class="sign-in-text">Sign in</div>
+                                        <div class="circle sl-button">
+                                            <img class="person-logo" src="https://apps.microsoft.com/assets/icons/person-loggedout-light.svg"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
 </div>
+
+<style>
+</style>
