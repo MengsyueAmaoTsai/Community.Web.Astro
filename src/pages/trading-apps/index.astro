@@ -1,5 +1,8 @@
 ---
+import { apiService } from "../../api-service";
 import Layout from "../../layouts/Layout.astro";
+
+const tradingApps = await apiService.listTradingApps();
 ---
 
 <Layout title="Trading apps">

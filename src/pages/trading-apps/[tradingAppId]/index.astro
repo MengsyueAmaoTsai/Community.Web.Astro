@@ -1,0 +1,14 @@
+---
+import { apiService } from "../../../api-service";
+import Layout from "../../../layouts/Layout.astro";
+
+const { tradingAppId } = Astro.params;
+
+const tradingApp = await apiService.getTradingAppById(tradingAppId as string);
+---
+
+<Layout title="">
+    <div>
+        TRADING APP
+    </div>
+</Layout>

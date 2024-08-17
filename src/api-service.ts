@@ -10,15 +10,30 @@ type SignalSourceResponse = {
 
 type SignalSourceDetailsResponse = SignalSourceResponse & {};
 
+type TradingAppDetailsResponse = TradingAppResponse & {};
+
 const BASE_ADDRESS = "http://localhost:11000";
 
 interface IApiService {
 	listTradingApps(): Promise<TradingAppResponse[]>;
 	listSignalSources(): Promise<SignalSourceResponse[]>;
 	getSignalSourceById(id: string): Promise<SignalSourceDetailsResponse>;
+	getTradingAppById(id: string): Promise<TradingAppDetailsResponse>;
 }
 
 class ApiService implements IApiService {
+	public getTradingAppById = async (
+		id: string,
+	): Promise<TradingAppDetailsResponse> => {
+		const response = await fetch(`${BASE_ADDRESS}/api/v1/trading-apps/${id}`);
+
+		if (!response.ok) {
+			throw new Error("Failed to fetch trading app");
+		}
+
+		return response.json();
+	};
+
 	public getSignalSourceById = async (
 		id: string,
 	): Promise<SignalSourceDetailsResponse> => {
