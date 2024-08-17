@@ -1,6 +1,4 @@
 ---
-import AppFooter from '../components/AppFooter.astro';
-import AppHeader from '../components/AppHeader.astro';
 import '../styles/global.scss';
 
 interface Props {
@@ -21,19 +19,7 @@ const { title } = Astro.props;
 		<title>{title} - Richill Capital Community</title>
 	</head>
 	<body>
-		<div class="app-index">
-			<AppHeader />
-	
-			<div class="layout-container">
-				<main>
-					<div id="RouterOutlet">
-						<slot />
-					</div>
-				</main>
-			</div>
-	
-			<AppFooter />
-		</div>
+		<slot/>
 	</body>
 </html>
 
