@@ -1,6 +1,12 @@
 type TradingAppResponse = { id: string };
 
-type SignalSourceResponse = { id: string };
+type SignalSourceResponse = {
+	id: string;
+	name: string;
+	description: string;
+	isPublished: boolean;
+	createdTime: Date;
+};
 
 const BASE_ADDRESS = "http://localhost:11000";
 
