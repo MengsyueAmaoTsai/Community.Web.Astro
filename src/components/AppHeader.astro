@@ -57,6 +57,7 @@ const items = [
                             <div class="store-button-container">
                                 <button>Open Store app</button> <!-- Placeholder NOT IMPLMENETED -->
                             </div>
+
                             <div class="current-user-shimmer">
                                 <div class="auth-control user-circle-btn">
                                     <div class="sign-in-container">
@@ -76,4 +77,51 @@ const items = [
 </div>
 
 <style>
+    .navbar-search-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 1996px;
+    }
+
+    .right-elements {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .right-button-container {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .sign-in-container {
+        gap: 8px;
+        align-items: center;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+    .sign-in-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .sign-in-text {
+        font-size: 14px;
+        font-weight: 400;
+        text-align: left;
+    }
+
+    .sign-in-text {
+        line-height: 20px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .sign-in-text {
+            color: rgba(255, 255, 255, 0.784);
+        }
+    }    
 </style>
