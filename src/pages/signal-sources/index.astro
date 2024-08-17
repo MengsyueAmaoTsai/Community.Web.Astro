@@ -1,7 +1,62 @@
 ---
+import { apiService } from "../../api-service";
+import ProductSpotlight from "../../components/ProductSpotlight.astro";
+import WideCard from "../../components/WideCard.astro";
 import Layout from "../../layouts/Layout.astro";
+
+const signalSources = await apiService.listSignalSources();
 ---
 
 <Layout title="Signal sources">
-    <div>Signal sources</div>
+    <div class="spotlight-shimmer">
+        <ProductSpotlight />
+    </div>
+
+    <div class="product-collections-wrap">
+        <!-- Top free apps -->
+        <div class="wide-collection-shimmer">
+            <div class="wide-column-collection">
+                <a class="collection-title" href="/">
+                    <h1>
+                        Collection title
+                        <div class="sl-icon"></div>
+                    </h1>
+                </a>
+                <div class="products-and-scroll-container wide">
+                    <div class="products-container wide wrap direction-column">
+                        {
+                            signalSources.map(source => (
+                                <div class="sl-animation">
+                                    <WideCard item={ source }/>
+                                </div>
+                            ))
+                        }
+                    </div>
+                    <div class="scroll-button"></div>
+                    <div class="scroll-button"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Other collection -->
+    </div>
 </Layout>
+
+<style>
+    .products-and-scroll-container {
+        position: relative;
+    }
+
+    .products-container {
+        display: flex;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        gap: 0.75rem;
+        max-height: 300px;
+        align-items: center;
+        scrollbar-width: none;
+        --shadow-spacing: 8px;
+        padding: 8px;
+        margin: calc(-1 * 8px);
+    }
+</style>
