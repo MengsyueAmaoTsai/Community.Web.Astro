@@ -17,17 +17,25 @@ console.log(signalSource);
                     <div class="image-logo-container">
                         <img src='https://via.placeholder.com/150'>
                     </div>
-
+            
                     <div class="signal-source-info">
                         <h1>{ signalSource.name }</h1>
-                        <div class="subtitle"></div>
+                        <div class="subtitle">
+                            <div>{ signalSource.description }</div>
+                        </div>
                         <div class="reviews-age-rating-container"></div>
-                        <div class="buy-box-container"></div>
+                        <div class="buy-box-container">
+                        </div>
                     </div>
                 </div>
             </div>
+            
             <div class="sticky-header"></div>
-            <div class="details two-column" dir="ltr"></div>
+
+            <div class="details two-column" dir="ltr">
+                <div class="left-side"></div>
+                <div class="product-recommendation"></div>
+            </div>
         </div>
     </div>
 </Layout>
