@@ -6,31 +6,7 @@ interface Props {
 	title: string;
 }
 
-type MenuItem = {
-	title: string;
-	route: string;
-}
-
 const { title } = Astro.props;
-
-const menuItems: MenuItem[] = [
-	{
-		title: 'Home',
-		route: '/'
-	},
-	{
-		title: 'Trading apps',
-		route: '/trading-apps'
-	},
-	{
-		title: 'Signal sources',
-		route: '/signal-sources'
-	},
-	{
-		title: 'About',
-		route: '/about'
-	},
-]
 ---
 
 <!doctype html>

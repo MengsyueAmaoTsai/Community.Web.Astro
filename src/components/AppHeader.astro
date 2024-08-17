@@ -1,5 +1,23 @@
 ---
 
+const navItems = [
+    {
+        title: 'Home',
+        route: '/'
+    },
+    {
+        title: 'Trading apps',
+        route: '/trading-apps'
+    },
+    {
+        title: 'Signal sources',
+        route: '/signal-sources'
+    },
+    {
+        title: 'About',
+        route: '/about'
+    },
+]
 ---
 
 <div class="app-header">
@@ -8,7 +26,20 @@
             <div class="nav-bar">
                 <div class="navbar-search-container">
                     <div class="skip-to-main"></div>
-                    <div class="nav-buttons-container"></div>
+                    <div class="nav-buttons-container">
+                        <div class="home-logo-link"></div>
+                        <div class="button-group">
+                            {
+                                navItems.map(button => (
+                                    <button>
+                                        <a href={ button.route }>
+                                            { button.title }
+                                        </a>
+                                    </button>
+                                ))
+                            }
+                        </div>
+                    </div>
                     <div class="right-element"></div>
                 </div>
             </div>
