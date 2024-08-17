@@ -1,13 +1,17 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import ProductSpotlight from "../../components/ProductSpotlight.astro";
+import { apiServiceSingleton } from "../../api-service";
 
-
+const signalSources = await apiServiceSingleton.listSignalSources();
 ---
 
 <Layout title="Signal sources">
 	<div class="signal-sources-page">
 		<ProductSpotlight />
+		{
+			signalSources.map(s => (<div>{s.id}</div>))
+		}
 
 		<div class="product-collections-container">
 			<div>Collection 1</div>
