@@ -1,24 +1,8 @@
 ---
 import Brand from "./Brand.astro"
+import Navigation from "./Navigation.astro"
 
-const items = [
-    {
-        title: 'Home',
-        route: '/',
-    },
-    {
-        title: 'Trading apps',
-        route: '/trading-apps',
-    },
-    {
-        title: 'Signal sources',
-        route: '/signal-sources',
-    },
-    {
-        title: 'About',
-        route: '/about',
-    },
-]
+
 ---
 <div class="app-header">
     <header class="sticky">
@@ -30,18 +14,7 @@ const items = [
                     
                     <div class="nav-buttons-container">
                         <Brand />
-
-                        <div class="sl-button-group">
-                            {
-                                items.map(item => (
-                                <div class="sl-button">
-                                    <a href={ item.route }>
-                                        <div class="tab-label">{ item.title }</div>
-                                    </a>
-                                </div>
-                                ))
-                            }
-                        </div>
+                        <Navigation/>
                     </div>
 
                     <div class="right-elements">
