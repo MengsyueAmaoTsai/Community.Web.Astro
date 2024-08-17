@@ -1,8 +1,19 @@
 ---
+import { apiService } from '../api-service';
+import ProductSpotlight from '../components/ProductSpotlight.astro';
 import Layout from '../layouts/Layout.astro';
+
+const sources = await apiService.listSignalSources();
 ---
 
 <Layout title="Home">
+    <ProductSpotlight/>
+    
+    {
+        sources.map(source => (
+            <div>{ source.id }</div>
+        ))
+    }
 </Layout>
 
 <style>
