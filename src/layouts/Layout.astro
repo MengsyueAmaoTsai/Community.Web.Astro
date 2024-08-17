@@ -1,6 +1,7 @@
 ---
 import AppFooter from '../components/AppFooter.astro';
 import AppHeader from '../components/AppHeader.astro';
+import '../styles/global.scss';
 
 interface Props {
 	title: string;
@@ -37,16 +38,6 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
-	html, body {
-		font-family: Segoe UI Variable Text, "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;;
-		font-feature-settings: "fina" on, "init" on;
-		color: #fff;
-		padding: 0;
-		margin: 0;
-		scroll-behavior: smooth;
-		background-color: #101010;
-	}	
-	
 	.layout-container {
 		height: 100%;
 		display: flex;
