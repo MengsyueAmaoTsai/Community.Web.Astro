@@ -1,0 +1,58 @@
+---
+---
+
+<div class="user-circle-button">
+    <div class="sign-in-container">
+        <div class="sign-in-text">Sign in</div>
+        <div class="sl-button">
+            <img class="person-logo" src="https://apps.microsoft.com/assets/icons/person-loggedout-light.svg" alt="">
+        </div>
+    </div>
+</div>
+
+<style>
+    .user-circle-button {
+    }
+
+    .sign-in-container {
+        gap: 8px;
+        align-items: center;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+    
+    .profile-container, 
+    .msft-account-container, 
+    .open-library-container, 
+    .sign-in-container, 
+    .top-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .sign-in-text {
+        line-height: 20px;
+    }
+
+    .profile-name, 
+    .open-library-text, 
+    .sign-in-text, 
+    .signed-out-msft-account-text {
+        font-size: 14px;
+        font-weight: 400;
+        text-align: left;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .sign-in-text {
+            color: rgba(255, 255, 255, 0.784);
+        }
+    }
+
+    .person-logo {
+        position: relative;
+        width: 16px;
+        height: 16px;
+        top: 3px;
+    }    
+</style>

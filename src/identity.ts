@@ -9,7 +9,7 @@ class CurrentUser implements ICurrentUser {
 
 	public constructor() {
 		this.id = "UID0009994";
-		this.isAuthenticated = true;
+		this.isAuthenticated = false;
 	}
 }
 

@@ -1,4 +1,5 @@
 ---
+import AnonymousUser from "./AnonymousUser.astro"
 
 const navItems = [
     {
@@ -21,11 +22,12 @@ const navItems = [
 ---
 
 <div class="app-header">
-    <header>
+    <header class="sticky">
         <nav>
             <div class="nav-bar">
                 <div class="navbar-search-container">
                     <div class="skip-to-main"></div>
+                    
                     <div class="nav-buttons-container">
                         <div class="home-logo-link"></div>
                         <div class="button-group">
@@ -40,9 +42,65 @@ const navItems = [
                             }
                         </div>
                     </div>
-                    <div class="right-element"></div>
+
+                    <div class="right-elements">
+                        <div class="mobile-button-container"></div>
+                        <div class="auto-complete-app-search"></div>
+                        <div class="right-button-container">
+                            <div class="store-button-container"></div>
+                            <AnonymousUser />
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 </div>
+
+<style>
+    .app-header {
+        contain: layout;
+        view-transition-name: app-header-transition;
+    }
+
+    header.sticky {
+        box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 20%);
+    }
+
+    .nav-bar {
+        display: grid;
+    }
+
+    .navbar-search-container {
+        display: flex;
+        justify-self: center;
+        width: 100%;
+        max-width: 1996px;
+    }
+
+    .skip-to-main {
+
+    }
+
+    .nav-buttons-container {
+    }
+
+    .right-elements {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .mobile-button-container {
+    }
+
+    .auto-complete-app-search {
+    }
+
+    .right-button-container {
+    }
+
+    .store-button-container {
+    }
+</style>
