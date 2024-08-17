@@ -1,0 +1,188 @@
+---
+const menuGroups = [
+    {
+        title: "What's New",
+        items: [
+            {
+                title: 'More content in the Microsoft Store',
+                route: '/'
+            },
+            {
+                title: 'Apps',
+                route: '/'
+            },
+            {
+                title: 'Games',
+                route: '/',
+            },
+            {
+                title: 'Movies & TV',
+                route: '/',
+            },
+            {
+                title: 'Windows Experience Blog',
+            }
+        ]
+    },
+    {
+        title: 'Microsoft Store',
+        items: [
+            {
+                title: 'Microsoft account',
+                route: '/'
+            },
+            {
+                title: 'Microsoft Store support',
+                route: '/'
+            },
+            {
+                title: 'Returns',
+                route: '/',
+            },
+            {
+                title: 'Flexible payments',
+                route: '/',
+            },
+            {
+                title: 'Policies and Code of Conduct',
+                route: '/',
+            }
+        ]
+    },
+    {
+        title: 'For Developers',
+        items: [
+            {
+                title: 'Publish your app',
+                route: '/'
+            },
+            {
+                title: 'Advertise with us',
+                route: '/'
+            },
+            {
+                title: 'Generate your app badge',
+                route: '/',
+            }
+        ]
+    },
+    {
+        title: 'Windows',
+        items: [
+            {
+                title: 'Careers',
+                route: '/'
+            },
+            {
+                title: 'About Microsoft',
+                route: '/'
+            },
+            {
+                title: 'Company news',
+                route: '/',
+            },
+            {
+                title: 'Investors',
+                route: '/',
+            },
+            {
+                title: 'Diversity and inclusion',
+                route: '/',
+            },
+            {
+                title: 'Accessibility',
+                route: '/',
+            },
+            {
+                title: 'SecuritySustainability',
+                route: '/',
+            },
+        ]
+    },
+]
+
+const footerLinks = [
+    {
+        title: 'Contact Microsoft',
+        route: '/',
+    },
+    {
+        title: 'Privacy',
+        route: '/',
+    },
+    {
+        title: 'Consumer Health Privacy',
+        route: '/',
+    },
+    {
+        title: 'Terms of use',
+        route: '/',
+    },
+    {
+        title: 'Trademarks',
+        route: '/',
+    },
+    {
+        title: 'Safety & eco',
+        route: '/',
+    },
+    {
+        title: 'Recycling',
+        route: '/',
+    },
+    {
+        title: 'About our ads',
+        route: '/',
+    },
+]
+---
+
+<div class="app-footer">
+    <footer class="footer-container">
+        <div>
+            <div class="footer-wrapper">
+                <div class="footer-primary-menu">
+                    {
+                        menuGroups.map(group => (
+                        <div class="menu-group">
+                            <h2 class="menu-group-title">{ group.title }</h2>
+                            {
+                                group.items.map(item => (
+                                <div class="menuitem">
+                                    <div class="sl-button">{ item.title }</div>
+                                </div>
+                                ))
+                            }
+                        </div>
+                        ))
+                    }
+                </div>
+
+                <div class="footer-secondary-menu">
+                    <div class="sec-container">
+                        <div class="language-selector">
+                        </div>
+
+                        <a class="privacy-container" target="_blank" href="/">
+                            <img class="privacy-icon" src="https://apps.microsoft.com/assets/icons/privacyoptions.svg" alt="">
+                            <div class="sl-button">
+                                Your privacy choices
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="sec-container">
+                        {
+                            footerLinks.map(link => (
+                                <div class="sl-button">
+                                    <a href={ link.route }>{ link.title }</a>
+                                </div>   
+                            ))
+                        }
+                        <div class="copyright-text">&copy; Richill Capital { new Date().getFullYear() }</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
