@@ -1,5 +1,6 @@
 ---
 import AppFooter from '../components/AppFooter.astro';
+import AppHeader from '../components/AppHeader.astro';
 import '../styles/global.scss';
 
 interface Props {
@@ -8,16 +9,7 @@ interface Props {
 
 const { title } = Astro.props;
 
-const items = [
-	{
-		title: 'Home',
-		route: '/'
-	},
-	{
-		title: 'About',
-		route: '/about'
-	},
-]
+
 ---
 
 <!doctype html>
@@ -32,33 +24,7 @@ const items = [
 	</head>
 	<body>
 		<div class="app-index">
-			<div class="app-header">
-				<header class="sticky">
-					<nav>
-						<div class="nav-bar">
-							<div class="navbar-search-container">
-								<div class="skip-to-main"></div>
-								<div class="nav-buttons-container">
-									<div class="home-logo-link"></div>
-									<div class="sl-button-group">
-										{
-											items.map(item => (
-											<div class="sl-button">
-												<a href={ item.route }>
-													<div class="tab-label">{ item.title }</div>
-												</a>
-											</div>
-											))
-										}
-									</div>
-								</div>
-								<div class="right-elements">
-								</div>
-							</div>
-						</div>
-					</nav>
-				</header>
-			</div>
+            <AppHeader/>
 
 			<div class="layout-container">
 				<main>

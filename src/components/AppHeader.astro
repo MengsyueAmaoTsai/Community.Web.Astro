@@ -1,0 +1,54 @@
+---
+const items = [
+    {
+        title: 'Home',
+        route: '/',
+    },
+    {
+        title: 'Trading apps',
+        route: '/trading-apps',
+    },
+    {
+        title: 'Signal sources',
+        route: '/signal-sources',
+    },
+    {
+        title: 'About',
+        route: '/about',
+    },
+]
+---
+
+<div class="app-header">
+    <header class="sticky">
+        <nav>
+            <div class="nav-bar">
+                <div class="navbar-search-container">
+                    <div class="skip-to-main"></div>
+                    
+                    <div class="nav-buttons-container">
+                        <div class="home-logo-link">
+                            <a><img class="msft-logo" src="https://apps.microsoft.com/assets/icons/microsoft-logo-light-1.png"></a>
+                            <a><img class="store-logo" src="https://apps.microsoft.com/assets/icons/microsoft-logo-light-2.png"></a>
+                        </div>
+
+                        <div class="sl-button-group">
+                            {
+                                items.map(item => (
+                                <div class="sl-button">
+                                    <a href={ item.route }>
+                                        <div class="tab-label">{ item.title }</div>
+                                    </a>
+                                </div>
+                                ))
+                            }
+                        </div>
+                    </div>
+
+                    <div class="right-elements">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+</div>
