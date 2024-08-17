@@ -1,4 +1,7 @@
 ---
+import CopyRight from "./CopyRight.astro"
+import FooterMenuGroup from "./FooterMenuGroup.astro"
+
 const menuGroups = [
     {
         title: "What's New",
@@ -143,18 +146,7 @@ const footerLinks = [
             <div class="footer-wrapper">
                 <div class="footer-primary-menu">
                     {
-                        menuGroups.map(group => (
-                        <div class="menu-group">
-                            <h2 class="menu-group-title">{ group.title }</h2>
-                            {
-                                group.items.map(item => (
-                                <div class="menuitem">
-                                    <div class="sl-button">{ item.title }</div>
-                                </div>
-                                ))
-                            }
-                        </div>
-                        ))
+                        menuGroups.map(group => (<FooterMenuGroup group={group} />))
                     }
                 </div>
 
@@ -174,12 +166,11 @@ const footerLinks = [
                     <div class="sec-container">
                         {
                             footerLinks.map(link => (
-                                <div class="sl-button">
-                                    <a href={ link.route }>{ link.title }</a>
-                                </div>   
+                                <div class="sl-button"><a href={ link.route }>{ link.title }</a></div>   
                             ))
                         }
-                        <div class="copyright-text">&copy; Richill Capital { new Date().getFullYear() }</div>
+                        
+                        <CopyRight />
                     </div>
                 </div>
             </div>
@@ -267,16 +258,6 @@ const footerLinks = [
 .privacy-link {
     display: flex;
     flex-direction: row;
-}
-
-.copyright-text {
-    color: var(--sl-color-neutral-600);
-    font-family: var(--body-font);
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    bottom: 1px;
 }
 
 sl-button::part(label) {

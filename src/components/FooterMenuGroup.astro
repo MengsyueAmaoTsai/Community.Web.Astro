@@ -1,0 +1,14 @@
+---
+const { group } = Astro.props;
+---
+
+<div class="menu-group">
+    <h2 class="menu-group-title">{ group.title }</h2>
+    {
+        group.items.map(item => (
+        <div class="menuitem">
+            <div class="sl-button">{ item.title }</div>
+        </div>
+        ))
+    }
+</div>
