@@ -1,0 +1,10 @@
+---
+import { currentUser } from "../identity";
+import AnonymousUser from "./AnonymousUser.astro";
+---
+
+<div class="auth-control user-circle-btn">
+    {
+        !currentUser.isAuthenticated ? (<AnonymousUser/>) : (<div>Logged in</div>)
+    }
+</div>

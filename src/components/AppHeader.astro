@@ -1,5 +1,7 @@
 ---
+import { currentUser } from "../identity"
 import Brand from "./Brand.astro"
+import CurrentUser from "./CurrentUser.astro"
 import Navigation from "./Navigation.astro"
 
 
@@ -32,14 +34,7 @@ import Navigation from "./Navigation.astro"
                             </div>
 
                             <div class="current-user-shimmer">
-                                <div class="auth-control user-circle-btn">
-                                    <div class="sign-in-container">
-                                        <div class="sign-in-text">Sign in</div>
-                                        <div class="circle sl-button">
-                                            <img class="person-logo" src="https://apps.microsoft.com/assets/icons/person-loggedout-light.svg"/>
-                                        </div>
-                                    </div>
-                                </div>
+                                <CurrentUser />
                             </div>
                         </div>
                     </div>
@@ -75,31 +70,4 @@ import Navigation from "./Navigation.astro"
         align-items: center;
     }
 
-    .sign-in-container {
-        gap: 8px;
-        align-items: center;
-        cursor: pointer;
-        white-space: nowrap;
-    }
-
-    .sign-in-container {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .sign-in-text {
-        font-size: 14px;
-        font-weight: 400;
-        text-align: left;
-    }
-
-    .sign-in-text {
-        line-height: 20px;
-    }
-
-    @media (prefers-color-scheme: dark) {
-        .sign-in-text {
-            color: rgba(255, 255, 255, 0.784);
-        }
-    }    
 </style>

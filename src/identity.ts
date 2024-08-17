@@ -19,5 +19,5 @@ class CurrentUser implements ICurrentUser {
 export const currentUser = new CurrentUser(
 	"UID0009994",
 	"community@richillcapital.com",
-	true,
+	false,
 ) as ICurrentUser;
