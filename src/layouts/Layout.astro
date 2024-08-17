@@ -1,4 +1,7 @@
 ---
+import AppFooter from '../components/AppFooter.astro';
+import AppHeader from '../components/AppHeader.astro';
+
 interface Props {
 	title: string;
 }
@@ -42,7 +45,7 @@ const menuItems: MenuItem[] = [
 	</head>
 	<body>
 		<div class="app-index">
-			<div class="app-header"></div>
+			<AppHeader />
 	
 			<div class="layout-container">
 				<main>
@@ -52,7 +55,7 @@ const menuItems: MenuItem[] = [
 				</main>
 			</div>
 	
-			<div class="app-footer"></div>
+			<AppFooter />
 		</div>
 	</body>
 </html>
@@ -64,14 +67,14 @@ const menuItems: MenuItem[] = [
 		justify-content: center;
 		flex: 1 1 0%;
 	}
+	
+	#RouterOutlet {
+		padding: 0px;
+		min-height: 90vh;
+	}
 
 	main {
 		width: calc(100% - calc(100px + 2 * 3rem));
 		max-width: 1996px;
-	}
-
-	#RouterOutlet {
-		padding: 0px;
-		min-height: 90vh;
 	}
 </style>
