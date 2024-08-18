@@ -2,6 +2,7 @@
 import AppFooter from '../components/AppFooter.astro';
 import AppHeader from '../components/AppHeader.astro';
 import '../styles/global.scss';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../constants';
 
 interface Props {
 	title: string;
@@ -16,11 +17,11 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content={SITE_DESCRIPTION} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title} - Richill Capital Community</title>
+		<title>{title} - {SITE_TITLE}</title>
 	</head>
 	<body>
 		<div class="app-index">
