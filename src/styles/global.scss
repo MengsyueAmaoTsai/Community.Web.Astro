@@ -552,6 +552,9 @@ h1, h2, h3, h4, h5 {
     min-height: 90vh;
 }
 
+#routerOutlet > * {
+    width: 100% !important;
+}
 // Header
 
 // Footer section
@@ -625,3 +628,41 @@ h1, h2, h3, h4, h5 {
 }
 
 
+// Button
+.button {
+    display: inline-flex;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    border-style: solid;
+    border-width: var(--sl-input-border-width);
+    font-family: var(--sl-input-font-family);
+    font-weight: var(--sl-font-weight-semibold);
+    text-decoration: none;
+    user-select: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: 0px;
+    transition: var(--sl-transition-x-fast) background-color, var(--sl-transition-x-fast) color, var(--sl-transition-x-fast) border, var(--sl-transition-x-fast) box-shadow;
+    cursor: inherit;
+}
+
+.button--text {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--sl-color-primary-600);
+}
+
+.button--small {
+    height: auto;
+    min-height: var(--sl-input-height-small);
+    font-size: var(--sl-button-font-size-small);
+    line-height: calc(var(--sl-input-height-small) - var(--sl-input-border-width)* 2);
+    border-radius: var(--sl-input-border-radius-small);
+}
+
+.rc-button::part(base) {
+    min-height: 0px;
+    text-wrap: wrap;
+    font-family: var(--body-font);
+}

@@ -5,8 +5,8 @@ const { href } = Astro.props;
 
 ---
 
-<div>
-    <a href={ href }>
+<div class="rc-button">
+    <a part="base" href={ href } class="button button--text button--small button-standard button--has-label">
         <slot/>
     </a>
 </div>
