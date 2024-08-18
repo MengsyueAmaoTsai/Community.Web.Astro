@@ -28,5 +28,5 @@ export const currentUser = new CurrentUser(
 	"UID0009994",
 	"Community User",
 	"community@richillcapital.com",
-	true,
+	false,
 ) as ICurrentUser;

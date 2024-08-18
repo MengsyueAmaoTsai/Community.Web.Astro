@@ -1,10 +1,17 @@
 ---
-import { currentUser } from "../../identity";
-import AnonymousUser from "./AnonymousUser.astro";
-import AuthorizedUser from "./AuthorizedUser.astro";
+import ButtonComponent from "../ButtonComponent/ButtonComponent.astro";
+
+
 ---
-<div class="auth-control">
-    {(!currentUser.isAuthenticated) ? (<AnonymousUser />) : (<AuthorizedUser />)}
+
+<div>
+    <div class="sign-in-container">
+        <span class="sign-in-text">Sign in</span>
+
+        <ButtonComponent>
+            <img class="person-logo" src="https://apps.microsoft.com/assets/icons/person-loggedout-light.svg">
+        </ButtonComponent>
+    </div> 
 </div>
 
 <style>
@@ -41,4 +48,4 @@ import AuthorizedUser from "./AuthorizedUser.astro";
         height: 16px;
         top: 3px;
     }
-</style>
+</style> 
