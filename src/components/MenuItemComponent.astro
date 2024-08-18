@@ -1,0 +1,17 @@
+<div>
+    <div id="anchor" part="base" class="menu-item">
+        <span part="checked-icon" class="menu-item__check"></span>
+       
+        <slot name="prefix" part="prefix" class="menu-item__prefix"/>
+        <slot part="label" class="menu-item__label"/>
+        <slot name="suffix" part="suffix" class="menu-item__suffix"/>
+        
+        <span part="submenu-icon"></span>
+        <slot name="submenu" />
+    </div>
+</div>
+
+<style>
+    .menu-item__label {
+    }
+</style>

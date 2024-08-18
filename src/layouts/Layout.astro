@@ -1,5 +1,6 @@
 ---
 import { AppInfo } from '../app-info';
+import AppFooter from '../components/AppFooter/AppFooter.astro';
 import AppHeader from '../components/AppHeader/AppHeader.astro';
 import '../styles/global.scss';
 
@@ -24,10 +25,18 @@ const { pageTitle } = Astro.props;
 	</head>
 	
 	<body>
-		<div class="lazy-load">
-			<AppHeader />
+		<div class="lazy-load"><AppHeader /></div>
+		
+		<div class="layout-container">
+			<main>
+				<div id="RouterOutlet">
+					<slot />
+				</div>
+				<div class="scroll-to-top-button"></div>
+			</main>
 		</div>
-		<slot />
+
+		<div class="lazy-load"><AppFooter /></div>
 	</body>
 </html>
 
