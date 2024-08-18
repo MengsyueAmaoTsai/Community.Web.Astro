@@ -1,6 +1,7 @@
 ---
 import BrandLogoLink from '../components/BrandLogoLink.astro';
 import ButtonComponent from '../components/ButtonComponent/ButtonComponent.astro';
+import ButtonGroupComponent from '../components/ButtonGroupComponent/ButtonGroupComponent.astro';
 import Layout from '../layouts/Layout.astro';
 
 const pages = [
@@ -25,17 +26,27 @@ const pages = [
 
 <Layout pageTitle="Home">
     <BrandLogoLink />
-    {
-        pages.map(page => (
-            <ButtonComponent href={page.link}>
-                <span class="tab-label">{ page.title }</span>
-            </ButtonComponent>
-        ))
-    }
+
+    <ButtonGroupComponent>
+        {
+            pages.map(page => (
+                <ButtonComponent href={page.link}>
+                    <span class="tab-label">{ page.title }</span>
+                </ButtonComponent>
+            ))
+        }
+        <div class="indicator" style="width: 39px; translate: 0px;"></div>
+    </ButtonGroupComponent>
 </Layout>
 
 <style>
     .tab-label {
         all: unset;
     }
+ 
+    @media (prefers-color-scheme: dark) {
+        .indicator {
+            border-color: #60CDFF;
+        }
+    }    
 </style>
