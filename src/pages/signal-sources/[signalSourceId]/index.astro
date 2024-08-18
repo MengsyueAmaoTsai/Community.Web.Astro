@@ -5,7 +5,6 @@ import Layout from "../../../layouts/Layout.astro";
 const { signalSourceId } = Astro.params;
 const signalSource = await apiService.getSignalSourceById(signalSourceId as string);
 ---
-
 <Layout title="">
     <div class="signal-source-details-page">
         <div class="details-container product-details">
@@ -24,7 +23,7 @@ const signalSource = await apiService.getSignalSourceById(signalSourceId as stri
                         </div>
                         <div class="reviews-age-rating-container"></div>
                         <div class="buy-box-container">
-                            <button></button>
+                            <button id="subscribe-button">Subscribe</button>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 ---
-import Brand from "./Brand.astro"
-import CurrentUser from "./CurrentUser.astro"
+import Brand from "../AppHeader/Brand.astro"
+import CurrentUser from "../CurrentUser/CurrentUser.astro"
 import Navigation from "./Navigation.astro"
 ---
 
@@ -28,7 +28,15 @@ import Navigation from "./Navigation.astro"
 
                         <div class="right-button-container">
                             <div class="store-button-container">
-                                <button>Open Store app</button> <!-- Placeholder NOT IMPLMENETED -->
+                                <div class="sl-button open-store-btn">
+                                    <a>
+                                        <div class="row">
+                                            <img class="small-logo" src="https://apps.microsoft.com/assets/icons/dark-logo-32x32.png" width="20" height="20" loading="lazy">
+                                            <div class="open-store-text">Open Store app</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                             </div>
 
                             <div class="current-user-shimmer">
@@ -66,5 +74,24 @@ import Navigation from "./Navigation.astro"
         display: flex;
         gap: 16px;
         align-items: center;
+    }
+
+    .mobile-button-container,
+    .store-button-container {
+        display: flex;
+    }
+
+    .open-store-btn {
+        align-self: center;
+        transition: opacity 150ms ease-in-out;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .open-store-text {
+        position: relative;
     }
 </style>
