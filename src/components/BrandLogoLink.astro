@@ -1,16 +1,14 @@
 ---
-import BrandLogoLink from '../components/BrandLogoLink.astro';
-import Layout from '../layouts/Layout.astro';
+import { ImageProvider } from "../image-pvodier";
 ---
 
-<Layout pageTitle="Home">
-    <BrandLogoLink />
-</Layout>
+<div class="brand-logo-link">
+    <a href="/"><img class="msft-logo" src={ImageProvider.MicrosoftLogoLight}></a>
+    <a href="/"><img class="store-logo" src={ImageProvider.StoreLogo}></a>
+</div>
 
 <style>
     .brand-logo-link {
-        background-color: black;
-
         display: flex;
         width: 200px;
         padding-top: 1rem;
@@ -32,4 +30,5 @@ import Layout from '../layouts/Layout.astro';
         display: block;
         margin: 0px auto;
     }
+
 </style>
