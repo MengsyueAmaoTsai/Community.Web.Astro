@@ -1,5 +1,7 @@
 ---
 import { AppInfo } from '../app-info';
+import AppHeader from './AppHeader/AppHeader.astro';
+import FooterMenu from './FooterMenu.astro';
 import '../styles/global.scss';
 
 interface Props {
@@ -23,7 +25,18 @@ const { pageTitle } = Astro.props;
 	</head>
 	
 	<body>
-		<slot/>
+		<div class="app-index">
+			<div class="lazy-load header-simmer loaded"><AppHeader/></div>
+
+			<div class="layout-container">
+				<main>
+					<div id="RouterOutlet"><slot/></div>
+					<div class="scroll-to-top-button"></div>
+				</main>
+			</div>
+			
+			<div class="footer-shimmer loaded"><FooterMenu/></div>
+		</div>
 	</body>
 </html>
 
