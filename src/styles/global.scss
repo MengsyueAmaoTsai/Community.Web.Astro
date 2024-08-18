@@ -77,6 +77,7 @@ nav {
     transition: $rc-transition-x-fast background-color, $rc-transition-x-fast color, $rc-transition-x-fast border, $rc-transition-x-fast box-shadow;
     cursor: inherit;
 }
+
 .button--text {
     background-color: transparent;
     border-color: transparent;
@@ -115,4 +116,9 @@ nav {
 
 .rc-button-group > .rc-button::part(label) {
     padding: 0 $rc-spacing-large;
+}
+
+// Input
+.rc-input {
+    width: 100%;
 }

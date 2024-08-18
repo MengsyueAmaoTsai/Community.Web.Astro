@@ -1,0 +1,19 @@
+<div class="rc-input">
+    <div part="form-control" class="form-control form-control-medium">
+        <label part="form-control-label" class="form-control__label">
+            <slot name="label"/>
+        </label>
+
+        <div part="form-control-input" class="form-control-input">
+            <div part="base" class="input input--medium input--standard input--empty">
+                <span part="prefix" class="input__prefix"></span>
+                <input part="input" class="input__control" type="text" placeholder="Search apps, games, movies, and more">
+                <span part="suffix" class="input__suffix"></span>
+            </div>
+        </div>
+        
+        <div part="form-control-help-text" class="forn-control__help-text">
+            <slot name="help-text"/>
+        </div>
+    </div>
+</div>
