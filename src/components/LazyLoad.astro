@@ -1,0 +1,28 @@
+---
+
+---
+<div class="lazy-load">
+    <slot/>
+</div>
+
+<style>
+    .lazy-load {
+        --shimmer-height: 0;
+        --shimmer-padding: 0;
+        --shimmer-border-radius: 0;
+        display: block;
+        position: relative;
+        min-height: var(--shimmer-height, 0);
+    }
+
+    .footer-shimmer {
+        --shimmer-height: 495px;
+        --shimmer-padding: 40px;
+        --shimmer-border-radius: 0;
+    }    
+
+    .lazy-load {&.loaded {
+            --shimmer-height: 0 !important;
+        }
+    }    
+</style>

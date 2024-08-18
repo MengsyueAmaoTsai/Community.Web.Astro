@@ -1,5 +1,9 @@
 ---
 import { AppInfo } from '../app-info';
+import AppHeader from '../components/AppHeader/AppHeader.astro';
+import FooterMenu from '../components/FooterMenu/FooterMenu.astro';
+import LazyLoad from '../components/LazyLoad.astro';
+import ScrollToTopButton from '../components/ScrollToTopButton.astro';
 import '../styles/global.scss';
 
 interface Props {
@@ -17,13 +21,28 @@ const { pageTitle } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		
-		<title>{pageTitle} - {AppInfo.name}</title>
+		<title>{pageTitle} | {AppInfo.name}</title>
 		
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	</head>
 	
 	<body>
-		<slot />		
+		<LazyLoad>
+			<AppHeader />
+		</LazyLoad>
+	
+		<div class="layout-container">
+			<main>
+				<div id="routerOutlet">
+					<slot/>
+				</div>
+				<ScrollToTopButton />
+			</main>
+		</div>
+		
+		<LazyLoad>
+			<FooterMenu />
+		</LazyLoad>		
 	</body>
 </html>
 

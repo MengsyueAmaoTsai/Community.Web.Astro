@@ -519,6 +519,13 @@ html,body {
     scroll-behavior: smooth;
     background-color: var(--theme-background-color)
 }
+
+main {
+    width: var(--layout-width);
+    max-width: var(--max-width);
+    z-index: 1;
+}
+
 h1, h2, h3, h4, h5 {
     font-family: var(--header-font);
 }
@@ -531,6 +538,21 @@ h1, h2, h3, h4, h5 {
 .rc-scroll-lock {
     --rc-scroll-lock-size: 0 !important
 }
+
+// Layout
+.layout-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex: 1 1 0%;
+}
+
+#routerOutlet {
+    padding: 0px;
+    min-height: 90vh;
+}
+
+// Header
 
 // Footer section
 ::part(app-footer) {
