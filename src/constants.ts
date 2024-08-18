@@ -39,6 +39,7 @@ export const FOOTER_MENU_GROUPS = [
 			},
 			{
 				title: "Windows Experience Blog",
+				route: "/",
 			},
 		],
 	},

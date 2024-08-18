@@ -1,0 +1,46 @@
+---
+import { FOOTER_LINKS, FOOTER_MENU_GROUPS } from "../../constants";
+import Button from "../Button.astro";
+
+---
+
+<div id="FooterMenu" part="app-footer">
+    <footer class="footer-container">
+        <div>
+            <div class="footer-wrapper">
+                <div class="footer-primary-menu">
+                    {
+                        FOOTER_MENU_GROUPS.map(group => (
+                            <div class="menu-group">
+                                <h2 class="menu-group-title">{ group.title }</h2>
+                                {
+                                    group.items.map(item => (
+                                        <div class="menuitem">
+                                            <Button href={ item.route }>{ item.title }</Button>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                        ))
+                    }
+                </div>
+            
+                <div class="footer-secondary-menu">
+                    <div class="sec-container">
+                    </div>
+                
+                    <div class="sec-container">
+                        {    
+                            FOOTER_LINKS.map(link => (
+                                <Button href={ link.route }>{ link.title }</Button>
+                            ))
+                        }
+                        <span class="copyright-text">
+                            &copy; Richill Capital {new Date().getFullYear()}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
