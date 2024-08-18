@@ -7,6 +7,10 @@ const signalSource = await apiService.getSignalSourceById(signalSourceId as stri
 
 ---
 <Layout pageTitle={ signalSource.name }>
+    <div>{signalSource.name}</div>
+    <div>{signalSource.description}</div>
+    <div>{signalSource.isPublished}</div>
+    <div>{signalSource.createdTime}</div>
 </Layout>
 
 <style>

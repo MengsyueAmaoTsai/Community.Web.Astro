@@ -1,7 +1,5 @@
 ---
 import { AppInfo } from '../app-info';
-import AppFooter from '../components/AppFooter/AppFooter.astro';
-import AppHeader from '../components/AppHeader/AppHeader.astro';
 import '../styles/global.scss';
 
 interface Props {
@@ -25,37 +23,9 @@ const { pageTitle } = Astro.props;
 	</head>
 	
 	<body>
-		<div class="lazy-load"><AppHeader /></div>
-		
-		<div class="layout-container">
-			<main>
-				<div id="RouterOutlet">
-					<slot />
-				</div>
-				<div class="scroll-to-top-button"></div>
-			</main>
-		</div>
-
-		<div class="lazy-load"><AppFooter /></div>
+		<slot/>
 	</body>
 </html>
 
 <style is:global>
-	.layout-container {
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		flex: 1 1 0%;
-	}
-
-	main {
-		width: calc(100% - calc(100px + 2 * 3rem));
-		max-width: 1996px;
-		z-index: 1;
-	}
-
-	#RouterOutlet {
-		padding: 0px;
-		min-height: 90vh;
-	}
 </style>
