@@ -437,6 +437,10 @@
     --layout-width: calc(100% - calc(100px + 2 * 3rem));
     --card-spacing: 0.75rem;
     --footer-column-num: 4;
+
+    --right-side: max(338px, 22%);
+    --left-side: calc(100% - max(338px, 22%) - 64px);
+    --side-spacing: 64px;
     
     --max-width: 1996px;
     --sl-color-primary-50: rgb(247 250 253);
@@ -947,6 +951,72 @@ nav {
 }
 
 // Product details page
+.product-details {
+    padding: 0px 38px;
+}
+
+.details-container {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.details {
+    display: flex;
+    align-items: stretch;
+    --right-side: max(338px, 22%);
+    --side-spacing: 64px;
+    --left-side: calc(100% - var(--right-side) - var(--side-spacing));
+    --transition: all ease-in-out var(--sl-transition-medium);
+    gap: var(--side-spacing);
+}
+
+.blur-img {
+    position: absolute;
+    top: -200px;
+    z-index: -1;
+    left: var(--offset-left);
+    right: var(--offset-left);
+    height: 500px;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(40px) opacity(0.8);
+    transform: translate3d(0, 0, 0);
+    background-image: url(https://store-images.s-microsoft.com/image/apps.40518.14127333176902609.7be7b901-15fe-4c27-863c-7c0dbfc26c5c.5c278f58-912b-4af9-88f8-a65fff2da477?h=210);
+    --offset-left: -136px;    
+}
+
+.app-info-container {
+    display: flex;
+    gap: 2rem;
+    margin: 6.75rem 0 4.25rem;
+    --right-side: max(338px, 22%);
+    --side-spacing: 64px;
+    --left-side: calc(100% - var(--right-side) - var(--side-spacing));
+    width: var(--left-side);
+}
+
+.psi-download-offset {
+    margin-bottom: 3rem;
+}
+.image-logo-container, .logo-container {
+    position: relative;
+    height: 100%;
+    width: auto;
+}
+
+.logo {
+    border-radius: var(--sl-border-radius-large);
+    height: auto;
+    width: 200px;
+    vertical-align: middle;
+}
+
+.logo.view-transition {
+    view-transition-name: app-logo;
+}
+
 .app-info, .app-info-skeleton {
     display: flex;
     flex-direction: column;

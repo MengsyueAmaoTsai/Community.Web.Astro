@@ -1,6 +1,6 @@
 ---
 import { apiService } from "../../../api-service";
-import Button from "../../../components/Button.astro";
+import ProductHeader from "../../../components/Products/ProductHeader.astro";
 import Layout from "../../../layouts/Layout.astro";
 
 const { tradingAppId } = Astro.params;
@@ -9,19 +9,10 @@ const tradingApp = await apiService.getTradingAppById(tradingAppId as string);
 ---
 
 <Layout pageTitle={tradingApp.name}>
-    <div class="app-info">
-        <h1 class="title view-transition">{tradingApp.name}</h1>
+    <div class="details-container product-details">
+        <ProductHeader productId={tradingApp.id} productName={tradingApp.name}></ProductHeader>
         
-        <p class="subtitle">
-            <Button href="">
-                {tradingApp.id}
-            </Button>
-        </p>
-
-        <div class="reviews-age-rating-container">
-        </div>
-
-        <div class="buy-box-container">
+        <div class="details two-column">
 
         </div>
     </div>
