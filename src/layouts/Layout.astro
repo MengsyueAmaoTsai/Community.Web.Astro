@@ -1,47 +1,28 @@
 ---
-import AppFooter from '../components/AppFooter/AppFooter.astro';
-import AppHeader from '../components/AppHeader/AppHeader.astro';
 import '../styles/global.scss';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../constants';
 
 interface Props {
-	title: string;
+	pageTitle: string;
 }
 
-const { title } = Astro.props;
-
-
+const { pageTitle } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={SITE_DESCRIPTION} />
+		<meta name="description" content={AppInfo.description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title} - {SITE_TITLE}</title>
+		
+		<title>{pageTitle} - {AppInfo.name}</title>
+		
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	</head>
+	
 	<body>
-		<div class="app-index">
-            <div class="header-shimmer loaded">
-                <AppHeader/>
-            </div>
-
-            <div class="layout-container">
-				<main>
-					<div id="RouterOutlet">
-						<slot/>
-					</div>
-					<div class="scroll-to-top-button"></div>
-				</main>
-			</div>
-                
-            <div class="footer-shimmer loaded">
-                <AppFooter />
-            </div>
-		</div>
+		<slot />
 	</body>
 </html>
 

@@ -5,7 +5,7 @@ import Layout from "../../../layouts/Layout.astro";
 const { signalSourceId } = Astro.params;
 const signalSource = await apiService.getSignalSourceById(signalSourceId as string);
 ---
-<Layout title="">
+<Layout pageTitle="">
     <div class="signal-source-details-page">
         <div class="details-container product-details">
             <div class="product-header" dir="ltr">

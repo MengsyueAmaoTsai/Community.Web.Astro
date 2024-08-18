@@ -7,7 +7,7 @@ const { tradingAppId } = Astro.params;
 const tradingApp = await apiService.getTradingAppById(tradingAppId as string);
 ---
 
-<Layout title="">
+<Layout pageTitle="">
     <div>
         TRADING APP
     </div>
