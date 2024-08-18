@@ -961,6 +961,17 @@ nav {
     box-sizing: border-box;
 }
 
+.details .left-side {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sl-spacing-large);
+    transition: var(--transition);
+}
+
+.details.two-column .left-side {
+    width: var(--left-side);
+}
+
 .details {
     display: flex;
     align-items: stretch;
@@ -1064,4 +1075,19 @@ nav {
     flex-direction: column;
     justify-content: end;
     height: 100%;
+}
+
+
+// Product recommendation
+.details .product-recommendation {
+    transition: var(--transition);
+    align-self: flex-start;
+    position: sticky;
+    width: 100%;
+    top: 115px;
+}
+
+.details.two-column .product-recommendation {
+    width: var(--right-side);
+    overflow: visible;
 }

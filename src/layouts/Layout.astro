@@ -27,22 +27,24 @@ const { pageTitle } = Astro.props;
 	</head>
 	
 	<body>
-		<LazyLoad>
-			<AppHeader />
-		</LazyLoad>
-	
-		<div class="layout-container">
-			<main>
-				<div id="routerOutlet">
-					<slot/>
-				</div>
-				<ScrollToTopButton />
-			</main>
-		</div>
+		<div id="app-index">
+			<LazyLoad>
+				<AppHeader />
+			</LazyLoad>
 		
-		<LazyLoad>
-			<FooterMenu />
-		</LazyLoad>		
+			<div class="layout-container">
+				<main>
+					<div id="routerOutlet">
+						<slot/>
+					</div>
+					<ScrollToTopButton />
+				</main>
+			</div>
+			
+			<LazyLoad>
+				<FooterMenu />
+			</LazyLoad>		
+		</div>
 	</body>
 </html>
 

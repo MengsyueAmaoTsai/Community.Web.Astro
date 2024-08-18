@@ -1,6 +1,10 @@
 ---
 import { apiService } from "../../../api-service";
+import LazyLoad from "../../../components/LazyLoad.astro";
+import AdditionalInformation from "../../../components/Products/AdditionalInformation.astro";
 import ProductHeader from "../../../components/Products/ProductHeader.astro";
+import ProductRecommendation from "../../../components/Products/ProductRecommendation.astro";
+import SystemRequirements from "../../../components/Products/SystemRequirements.astro";
 import Layout from "../../../layouts/Layout.astro";
 
 const { tradingAppId } = Astro.params;
@@ -13,7 +17,18 @@ const tradingApp = await apiService.getTradingAppById(tradingAppId as string);
         <ProductHeader productId={tradingApp.id} productName={tradingApp.name}></ProductHeader>
         
         <div class="details two-column">
+            <div class="left-side">
 
+                <LazyLoad>
+                    <SystemRequirements></SystemRequirements>
+                </LazyLoad>
+                
+                <LazyLoad>
+                    <AdditionalInformation></AdditionalInformation>
+                </LazyLoad>
+            </div>
+
+            <ProductRecommendation></ProductRecommendation>
         </div>
     </div>
 </Layout>
