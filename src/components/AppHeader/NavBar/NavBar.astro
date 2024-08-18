@@ -4,6 +4,7 @@ import AutoCompleteAppSearch from "./AutoCompleteAppSearch.astro";
 import BrandLogoLink from "./BrandLogoLink.astro";
 import ButtonComponent from "../../ButtonComponent/ButtonComponent.astro";
 import ButtonGroupComponent from "../../ButtonGroupComponent/ButtonGroupComponent.astro";
+import CurrentUser from "../../CurrentUser/CurrentUser.astro";
 
 
 const pages = [
@@ -58,7 +59,10 @@ const pages = [
                         </div>
                     </ButtonComponent>
                 </div>
-                <button>Sign in</button>
+
+                <div class="lazy-load">
+                    <CurrentUser></CurrentUser>
+                </div>
             </div>
         </div>
     </div>
