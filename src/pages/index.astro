@@ -1,35 +1,41 @@
 ---
 import BrandLogoLink from '../components/BrandLogoLink.astro';
+import ButtonComponent from '../components/ButtonComponent/ButtonComponent.astro';
 import Layout from '../layouts/Layout.astro';
+
+const pages = [
+    {
+        title: 'Home',
+        link: '/',
+    },
+    {
+        title: 'Trading apps',
+        link: '/trading-apps',
+    },
+    {
+        title: 'Signal sources',
+        link: '/signal-sources',
+    },
+    {
+        title: 'About',
+        link: '/about',
+    },
+]
 ---
 
 <Layout pageTitle="Home">
     <BrandLogoLink />
+    {
+        pages.map(page => (
+            <ButtonComponent href={page.link}>
+                <span class="tab-label">{ page.title }</span>
+            </ButtonComponent>
+        ))
+    }
 </Layout>
 
 <style>
-    .brand-logo-link {
-        background-color: black;
-
-        display: flex;
-        width: 200px;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
-
-    .store-logo {
-        width: 54px;
-        height: 36px;
-    }
-
-    .msft-logo {
-        width: 120px;
-        height: 36px;
-    }
-
-    .msft-logo,
-    .store-logo {
-        display: block;
-        margin: 0px auto;
+    .tab-label {
+        all: unset;
     }
 </style>
