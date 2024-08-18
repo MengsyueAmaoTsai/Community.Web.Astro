@@ -1,11 +1,22 @@
 ---
-import NavBar from "../../components/AppHeader/NavBar/NavBar.astro";
+import NavBar from "./NavBar.astro";
 ---
 
-<div part="app-header">
+<div part="app-header" class="app-header">
     <header>
         <nav>
             <NavBar />
         </nav>
     </header>
 </div>
+
+<style lang="scss">
+    .app-header {
+        view-transition-name: main-header;
+        contain: layout;
+    }
+
+    ::part(app-header) {
+        view-transition-name: app-header-transition;
+    }
+</style>

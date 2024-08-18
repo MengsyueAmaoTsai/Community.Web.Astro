@@ -1,10 +1,44 @@
-<div>
+---
+import Button from "../Button.astro";
+import ButtonGroup from "../ButtonGroup.astro";
+import BrandLogoLink from "./BrandLogoLink.astro";
+
+const pages = [
+    {
+        title: 'Home',
+        route: '/'
+    },
+    {
+        title: 'Trading apps',
+        route: '/trading-apps'
+    },
+    {
+        title: 'Signal sources',
+        route: '/signal-sources'
+    },
+    {
+        title: 'About',
+        route: '/about'
+    },
+];
+---
+
+<div class="nav-bar">
     <div class="navbar-search-container">
         <div class="skip-to-main"></div>
         
         <div class="nav-buttons-container">
-            <div class="home-logo-link"></div>
-            <div class="button-group"></div>
+            <BrandLogoLink/>
+            <ButtonGroup>
+                {
+                    pages.map(page => (
+                        <Button href={ page.route }>
+                            <span class="tab-label">{ page.title }</span>
+                        </Button>
+                    ))
+                }
+                <div class="indicator"></div>
+            </ButtonGroup>
         </div>
 
         <div class="right-elements">
@@ -14,3 +48,35 @@
         </div>
     </div>
 </div>
+
+<style lang="scss">
+    .nav-bar {
+        display: grid;
+    }
+
+    .navbar-search-container {
+        display: flex;
+        justify-self: center;
+        width: 100%;
+        max-width: 1996px;
+    }
+
+    .skip-to-main {
+        position: absolute;
+        left: calc(var(--layout-padding) / 2);
+        z-index: -1;
+        opacity: 0;
+    }
+
+    .nav-buttons-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .right-elements {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-end;
+    }
+</style>
