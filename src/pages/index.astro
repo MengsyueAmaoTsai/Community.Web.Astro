@@ -3,6 +3,7 @@ import AutoCompleteAppSearch from '../components/AutoCompleteAppSearch.astro';
 import BrandLogoLink from '../components/BrandLogoLink.astro';
 import ButtonComponent from '../components/ButtonComponent/ButtonComponent.astro';
 import ButtonGroupComponent from '../components/ButtonGroupComponent/ButtonGroupComponent.astro';
+import { ImageProvider } from '../image-pvodier';
 import Layout from '../layouts/Layout.astro';
 
 const pages = [
@@ -50,7 +51,14 @@ const pages = [
             <AutoCompleteAppSearch></AutoCompleteAppSearch>
             
             <div class="right-button-container">
-                <button>Open Store app</button> <!-- Replace with button component -->
+                <div class="store-button-container">
+                    <ButtonComponent>
+                        <div class="row">
+                            <img class="small-logo" width="20" height="20" loading="lazy" src={ImageProvider.SmallLogo}>
+                            <span class="open-store-text">Open Store app</span>
+                        </div>
+                    </ButtonComponent>
+                </div>
                 <button>Sign in</button>
             </div>
         </div>
@@ -97,5 +105,27 @@ const pages = [
         display: flex;
         gap: 16px;
         align-items: center;
+    }
+
+    .mobile-button-container,
+    .store-button-container {
+        display: flex;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .small-logo {
+        position: relative;
+        width: 1rem;
+        height: 1rem;
+        align-self: center;
+        margin-inline-end: 0.25rem;
+    }
+
+    .open-store-text {
+        position: relative;
     }
 </style>
