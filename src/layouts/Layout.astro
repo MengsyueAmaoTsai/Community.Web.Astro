@@ -41,4 +41,21 @@ const { pageTitle } = Astro.props;
 </html>
 
 <style is:global>
+	.layout-container {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		flex: 1 1 0%;
+	}
+
+	main {
+		width: calc(100% - calc(100px + 2 * 3rem));
+		max-width: 1996px;
+		z-index: 1;
+	}
+
+	#RouterOutlet {
+		padding: 0px;
+		min-height: 90vh;
+	}
 </style>
