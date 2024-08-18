@@ -1,0 +1,12 @@
+---
+import './CardComponent.scss';
+---
+
+<div class="rc-card">
+    <div part="base" class="card card--has-header">
+        <slot name="image" part="image" class="card__image"/>
+        <slot name="header" part="header" class="card__header"/>
+        <slot part="body" class="card__body"/>
+        <slot name="footer" part="footer" class="card__footer"/>
+    </div>
+</div>
