@@ -1,31 +1,4 @@
-type TradingAppResponse = {
-	id: string;
-	name: string;
-	description: string;
-	category: string;
-	createdTime: Date;
-};
-
-type SignalSourceResponse = {
-	id: string;
-	name: string;
-	description: string;
-	isPublished: boolean;
-	createdTime: Date;
-};
-
-type SignalSourceDetailsResponse = SignalSourceResponse & {};
-
-type TradingAppDetailsResponse = TradingAppResponse & {};
-
 const BASE_ADDRESS = "http://localhost:11000";
-
-interface IApiService {
-	listTradingApps(): Promise<TradingAppResponse[]>;
-	listSignalSources(): Promise<SignalSourceResponse[]>;
-	getSignalSourceById(id: string): Promise<SignalSourceDetailsResponse>;
-	getTradingAppById(id: string): Promise<TradingAppDetailsResponse>;
-}
 
 class ApiService implements IApiService {
 	public getTradingAppById = async (
