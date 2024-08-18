@@ -529,6 +529,24 @@ main {
 h1, h2, h3, h4, h5 {
     font-family: var(--header-font);
 }
+
+header {
+    background-color: var(--theme-header-background-color);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: var(--layout-width);
+    padding-left: 0px;
+    padding-right: 0px;
+    transition: box-shadow 0.2s ease-in-out;
+    margin: auto;
+}
+
 @media (max-width: 575px) {
     :root {
         font-size:14px
@@ -555,7 +573,73 @@ h1, h2, h3, h4, h5 {
 #routerOutlet > * {
     width: 100% !important;
 }
+
 // Header
+.app-header {
+    view-transition-name: main-header;
+    contain: layout;
+}
+
+::part(app-header) {
+    view-transition-name: app-header-transition;
+}
+
+.nav-bar {
+    display: grid;
+}
+
+.navbar-search-container {
+    display: flex;
+    justify-self: center;
+    width: 100%;
+    max-width: var(--max-width);
+}
+
+.skip-to-main {
+    position: absolute;
+    left: calc(var(--layout-padding) / 2);
+    z-index: -1;
+    opacity: 0;
+}
+
+.nav-buttons-container {
+    display: flex;
+    justify-content: center;
+}
+
+.right-elements {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+// Header - Logo link
+.home-logo-link {
+    display: flex;
+    width: 200px;
+    padding-top: var(--sl-spacing-medium);
+    padding-bottom: var(--sl-spacing-medium);
+}
+
+.msft-logo, .store-logo {
+    display: block;
+    margin: 0px auto;
+}
+
+.store-logo {
+    width: 54px;
+    height: 36px;
+}
+
+.msft-logo {
+    width: 120px;
+    height: 36px;
+}
+
+.home-logo-link img {
+    align-self: center;
+}
 
 // Footer section
 ::part(app-footer) {
