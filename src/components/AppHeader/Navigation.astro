@@ -18,7 +18,7 @@ const items = [
     },
 ]
 ---
-<div class="sl-button-group">
+<div class="navbar-button-group">
     {
         items.map(item => (
         <div class="item-button">
@@ -32,6 +32,13 @@ const items = [
 
 
 <style>
+    .navbar-button-group {
+        align-self: center;
+        position: relative;
+        --track-color: transparent;
+        display: flex;
+    }
+
     .item-button {
         color: hsl(240, 5.3% 58%);
         padding-top: 0.25rem;
@@ -57,5 +64,10 @@ const items = [
         padding: 0px;
         cursor: inherit;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    .tab-label {
+        padding: 0 1.25rem;
+        display: inline-block;
     }
 </style>

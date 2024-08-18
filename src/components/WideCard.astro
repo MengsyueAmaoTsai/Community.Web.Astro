@@ -5,7 +5,7 @@ const placeholderImage = 'https://via.placeholder.com/150'
 ---
 
 <div class="product-card" role="listitem">
-    <a href="/signal-sources" class="product product-wide">
+    <a href={`/signal-sources/${item.id}`} class="product product-wide">
         <div class="sl-animation">
             <img src={ item.image || placeholderImage } class="product-image" style="background-color: transparent;"/>
         </div>
