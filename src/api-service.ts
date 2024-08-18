@@ -1,4 +1,10 @@
-type TradingAppResponse = { id: string };
+type TradingAppResponse = {
+	id: string;
+	name: string;
+	description: string;
+	category: string;
+	createdTime: Date;
+};
 
 type SignalSourceResponse = {
 	id: string;
