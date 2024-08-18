@@ -1,4 +1,5 @@
 ---
+import AutoCompleteAppSearch from '../components/AutoCompleteAppSearch.astro';
 import BrandLogoLink from '../components/BrandLogoLink.astro';
 import ButtonComponent from '../components/ButtonComponent/ButtonComponent.astro';
 import ButtonGroupComponent from '../components/ButtonGroupComponent/ButtonGroupComponent.astro';
@@ -25,21 +26,53 @@ const pages = [
 ---
 
 <Layout pageTitle="Home">
-    <BrandLogoLink />
 
-    <ButtonGroupComponent>
-        {
-            pages.map(page => (
-                <ButtonComponent href={page.link}>
-                    <span class="tab-label">{ page.title }</span>
-                </ButtonComponent>
-            ))
-        }
-        <div class="indicator" style="width: 39px; translate: 0px;"></div>
-    </ButtonGroupComponent>
+    <div class="navbar-search-container">
+        <div class="skip-to-main"></div> <!-- Replace with ButtonComponent -->
+        
+        <div class="nav-buttons-container">
+            <BrandLogoLink />
+            <ButtonGroupComponent>
+                {
+                    pages.map(page => (
+                        <ButtonComponent href={page.link}>
+                            <span class="tab-label">{ page.title }</span>
+                        </ButtonComponent>
+                    ))
+                }
+                <div class="indicator" style="width: 39px; translate: 0px;"></div>
+            </ButtonGroupComponent>
+        </div>
+    
+        <div class="right-elements">
+            <div class="mobile-button-container"></div>
+            
+            <AutoCompleteAppSearch></AutoCompleteAppSearch>
+            
+            <div class="right-button-container">
+                <button>Open Store app</button> <!-- Replace with button component -->
+                <button>Sign in</button>
+            </div>
+        </div>
+    </div>
 </Layout>
 
 <style>
+    .navbar-search-container {
+        display: flex;
+        justify-self: center;
+        width: 100%;
+        max-width: 1996px;        
+    }
+
+    .skip-to-main {
+    }
+
+    .nav-buttons-container {
+        display: flex;
+        justify-content: center;
+    }
+
     .tab-label {
         all: unset;
     }
@@ -49,4 +82,20 @@ const pages = [
             border-color: #60CDFF;
         }
     }    
+
+    .right-elements {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-end;        
+    }
+
+    .mobile-button-container {
+    }
+
+    .right-button-container {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
 </style>
