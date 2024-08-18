@@ -1,13 +1,12 @@
 ---
-import Button from "../Button.astro";
+import { currentUser } from "../../identity";
+import AnonymousUser from "./AnonymousUser.astro";
 ---
 
 <div class="current-user">
-    <div class="sign-in-container">
-        <span class="sign-in-text">Sign in</span>
-
-        <Button href="">
-            <img class="person-logo" src="https://apps.microsoft.com/assets/icons/person-loggedout-light.svg">
-        </Button>
-    </div>
+    {
+        currentUser.isAuthenticated ? 
+            (<div></div>) : 
+            (<AnonymousUser/>)
+    }
 </div>
