@@ -945,3 +945,53 @@ nav {
     height: 28px;
     padding: 0 var(--sl-input-spacing-small);
 }
+
+// Product details page
+.app-info, .app-info-skeleton {
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+}
+
+.app-info h1 {
+    font-weight: var(--sl-title-font-weight);
+    font-size: 28px;
+    margin: var(--sl-spacing-x-small) 0;
+}
+.title.view-transition {
+    view-transition-name: app-title;
+}
+
+.sc-button::part(base), p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+@media (prefers-color-scheme: dark) {
+    .subtitle {
+        color: #FFFFFFC8 !important;
+    }
+}
+
+.app-info .subtitle {
+    display: flex;
+    align-items: center;
+    gap: var(--sl-spacing-3x-small);
+    font-size: var(--sl-font-size-medium);
+    color: var(--sl-color-neutral-600);
+    margin: 0;
+}
+
+.reviews-age-rating-container {
+    display: flex;
+    gap: var(--sl-spacing-2x-small);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.app-info .buy-box-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100%;
+}
