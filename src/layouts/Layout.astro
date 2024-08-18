@@ -1,5 +1,6 @@
 ---
 import { AppInfo } from '../app-info';
+import AppHeader from '../components/AppHeader/AppHeader.astro';
 import '../styles/global.scss';
 
 interface Props {
@@ -23,6 +24,9 @@ const { pageTitle } = Astro.props;
 	</head>
 	
 	<body>
+		<div class="lazy-load">
+			<AppHeader />
+		</div>
 		<slot />
 	</body>
 </html>
