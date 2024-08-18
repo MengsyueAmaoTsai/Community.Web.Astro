@@ -3,28 +3,28 @@ import { apiService } from "../../../api-service";
 import Layout from "../../../layouts/Layout.astro";
 
 const { signalSourceId } = Astro.params;
-
 const signalSource = await apiService.getSignalSourceById(signalSourceId as string);
-console.log(signalSource);
 ---
 
 <Layout title="">
     <div class="signal-source-details-page">
         <div class="details-container product-details">
-            <div class="product-header">
+            <div class="product-header" dir="ltr">
                 <div class="blur-img"></div>
-                <div class="signal-source-info-container psi-download-offset">
+
+                <div class="info-container psi-download-offset" dir="ltr">
                     <div class="image-logo-container">
-                        <img src='https://via.placeholder.com/150'>
+                        <img class="logo view-transition" src='https://via.placeholder.com/150' style="background-color: transparent;">
                     </div>
             
-                    <div class="signal-source-info">
-                        <h1>{ signalSource.name }</h1>
+                    <div class="info">
+                        <h1 class="title view-transition">{ signalSource.name }</h1>
                         <div class="subtitle">
                             <div>{ signalSource.description }</div>
                         </div>
                         <div class="reviews-age-rating-container"></div>
                         <div class="buy-box-container">
+                            <button></button>
                         </div>
                     </div>
                 </div>
@@ -41,4 +41,57 @@ console.log(signalSource);
 </Layout>
 
 <style>
+    .details-container {
+        width: 100%;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    .product-details {
+        padding: 0px 38px;
+    }
+
+    .info-container {
+        display: flex;
+        gap: 2rem;
+        margin: 6.75rem 0px 4.25rem;
+        --right-side: max(338px, 22%);
+        --side-spacing: 64px;
+        --left-side: calc(100% - var(var(--right-side) - var(--side-spacing)));
+        width: var(--left-side);
+    }
+
+    .image-logo-container,
+    .logo-container {
+        position: relative;
+        height: 100%;
+        width: auto;
+    }
+
+    .info,
+    .info-skeleton {
+        display: flex;
+        flex-direction: column;
+        min-height: 200px;
+    }
+
+    .info h1 {
+        font-weight: 600;
+        font-size: 28px;
+        margin: 0.5rem;
+    }
+
+    .logo {
+        border-radius: 0.5rem;
+        height: auto;
+        width: 200px;
+        vertical-align: middle;
+    }
+
+    .logo.view-transition {
+        view-transition-name: logo;
+    }
+    .title.view-transition {
+        view-transition-name: title;
+    }    
 </style>
