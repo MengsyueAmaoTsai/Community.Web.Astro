@@ -1,6 +1,5 @@
 ---
 import { apiService } from "../../../api-service";
-import CardComponent from "../../../components/CardComponent/CardComponent.astro";
 import Layout from "../../../layouts/Layout.astro";
 
 const { signalSourceId } = Astro.params;
@@ -8,45 +7,7 @@ const signalSource = await apiService.getSignalSourceById(signalSourceId as stri
 
 ---
 <Layout pageTitle={ signalSource.name }>
-    <CardComponent>
-        <div slot="header">
-            <h2>Description</h2>
-        </div>
-
-        <div class="body">
-            <p class="description">{ signalSource.description }</p>
-        </div>
-
-        <span>
-            <button id="show-more-button">Read more</button> <!-- Should replace with ButtonComponent -->
-        </span>
-    </CardComponent>
 </Layout>
 
 <style>
-    /* Description */       
-    .description {
-        white-space: pre-wrap;
-        overflow-y: hidden;
-        text-overflow: ellipsis;
-        padding-bottom: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        max-height: 150px;
-    }
-
-    .description.expanded {
-        max-height: none;
-        overflow-y: initial;
-    }
-
-    /* Additional information */
-    .grid-container {
-    }
-
-    .rc-button::part(base), 
-    p {
-        font-size: 14px;
-        font-weight: 400;
-    }
 </style>
