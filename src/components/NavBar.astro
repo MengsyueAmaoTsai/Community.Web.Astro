@@ -1,0 +1,134 @@
+---
+import { ImageProvider } from "../image-pvodier";
+import AutoCompleteAppSearch from "./AutoCompleteAppSearch.astro";
+import BrandLogoLink from "./BrandLogoLink.astro";
+import ButtonComponent from "./ButtonComponent/ButtonComponent.astro";
+import ButtonGroupComponent from "./ButtonGroupComponent/ButtonGroupComponent.astro";
+
+
+const pages = [
+    {
+        title: 'Home',
+        link: '/',
+    },
+    {
+        title: 'Trading apps',
+        link: '/trading-apps',
+    },
+    {
+        title: 'Signal sources',
+        link: '/signal-sources',
+    },
+    {
+        title: 'About',
+        link: '/about',
+    },
+]
+---
+
+<div class="nav-bar">
+    <div class="navbar-search-container">
+        <div class="skip-to-main"></div> <!-- Replace with ButtonComponent -->
+        
+        <div class="nav-buttons-container">
+            <BrandLogoLink />
+            <ButtonGroupComponent>
+                {
+                    pages.map(page => (
+                        <ButtonComponent href={page.link}>
+                            <span class="tab-label">{ page.title }</span>
+                        </ButtonComponent>
+                    ))
+                }
+                <div class="indicator" style="width: 39px; translate: 0px;"></div>
+            </ButtonGroupComponent>
+        </div>
+    
+        <div class="right-elements">
+            <div class="mobile-button-container"></div>
+            
+            <AutoCompleteAppSearch></AutoCompleteAppSearch>
+            
+            <div class="right-button-container">
+                <div class="store-button-container">
+                    <ButtonComponent>
+                        <div class="row">
+                            <img class="small-logo" width="20" height="20" loading="lazy" src={ImageProvider.SmallLogo}>
+                            <span class="open-store-text">Open Store app</span>
+                        </div>
+                    </ButtonComponent>
+                </div>
+                <button>Sign in</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .nav-bar {
+        display: grid;
+    }
+
+    .navbar-search-container {
+        display: flex;
+        justify-self: center;
+        width: 100%;
+        max-width: 1996px;        
+    }
+
+    .skip-to-main {
+    }
+
+    .nav-buttons-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .tab-label {
+        all: unset;
+    }
+ 
+    @media (prefers-color-scheme: dark) {
+        .indicator {
+            border-color: #60CDFF;
+        }
+    }    
+
+    .right-elements {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-end;        
+    }
+
+    .mobile-button-container {
+    }
+
+    .right-button-container {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .mobile-button-container,
+    .store-button-container {
+        display: flex;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .small-logo {
+        position: relative;
+        width: 1rem;
+        height: 1rem;
+        align-self: center;
+        margin-inline-end: 0.25rem;
+    }
+
+    .open-store-text {
+        position: relative;
+    }    
+</style>
