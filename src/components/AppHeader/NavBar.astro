@@ -2,6 +2,9 @@
 import { NAVIGATION_ITEMS } from "../../constants";
 import Button from "../Button.astro";
 import ButtonGroup from "../ButtonGroup.astro";
+import CurrentUser from "../CurrentUser/CurrentUser.astro";
+import LazyLoad from "../LazyLoad.astro";
+import AutoCompleteAppSearch from "./AutoCompleteAppSearch.astro";
 import BrandLogoLink from "./BrandLogoLink.astro";
 ---
 
@@ -24,6 +27,23 @@ import BrandLogoLink from "./BrandLogoLink.astro";
         </div>
 
         <div class="right-elements">
+            <div class="mobile-button-container"></div>
+            <AutoCompleteAppSearch></AutoCompleteAppSearch>
+
+            <div class="right-button-container">
+                <div class="store-button-container">
+                    <Button href="">
+                        <div class="row">
+                            <img class="small-logo" src="https://apps.microsoft.com/assets/icons/dark-logo-32x32.png">
+                            <span class="open-store-text">Open Store app</span>
+                        </div>
+                    </Button>
+                </div>
+
+                <LazyLoad>
+                    <CurrentUser></CurrentUser>
+                </LazyLoad>
+            </div>
         </div>
     </div>
 </div>

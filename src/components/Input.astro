@@ -1,2 +1,23 @@
-<div>
+<div class="rc-input">
+    <div part="form-control" class="form-control form-control--medium">
+        <label part="form-control-label" class="form-control__label">
+            <slot name="label"/>
+        </label>
+
+        <div part="form-control-input" class="form-control-input">
+            <div part="base" class="input input--medium input--standard input--empty">
+                <span part="prefix" class="input__prefix">
+                    <slot name="prefix"/>
+                </span>
+                <input part="input" class="input__control" type="text" placeholder="Search apps, games, movies, and more" spellcheck="false">
+                <span part="suffix" class="input__suffix">
+                    <slot name="suffix"/>
+                </span>
+            </div>
+        </div>
+
+        <div part="form-control-help-text" id="help-text" class="form-control__help-text">
+            <slot name="help-text"/>
+        </div>
+    </div>
 </div>

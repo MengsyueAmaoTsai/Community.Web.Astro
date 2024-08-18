@@ -618,6 +618,73 @@ nav {
     all: unset;
 }
 
+.mobile-button-container, .store-button-container {
+    display: flex;
+}
+
+.right-button-container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.mobile-button-container, .store-button-container {
+    display: flex;
+}
+
+// Header - Current user
+.profile-container, .msft-account-container, .open-library-container, .sign-in-container, .top-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.sign-in-container {
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.profile-name, .open-library-text, .sign-in-text, .signed-out-msft-account-text {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.sign-in-text {
+    line-height: 20px;
+}
+
+.person-logo {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    top: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .sign-in-text {
+        color: rgba(255, 255, 255, 0.784);
+    }
+}
+// Header - Store button
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.small-logo {
+    position: relative;
+    width: var(--sl-spacing-medium);
+    height: var(--sl-spacing-medium);
+    align-self: center;
+    margin-inline-end: var(--sl-spacing-2x-small);
+}
+
+.open-store-text {
+    position: relative;
+}
+
 // Header - Logo link
 .home-logo-link {
     display: flex;
@@ -645,6 +712,20 @@ nav {
     align-self: center;
 }
 
+// Header -- Search
+.auto-complete-app-search {
+    align-self: center;
+    width: 100%;
+    margin-inline-end: var(--sl-spacing-x-large);
+    margin-inline-start: var(--sl-spacing-x-large);
+    max-width: 600px;
+}
+
+.app-search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 // Footer section
 ::part(app-footer) {
     view-transition-name: app-footer-transition;
@@ -777,4 +858,90 @@ nav {
 .button-group {
     display: flex;
     flex-wrap: nowrap;
+}
+
+// Input
+.rc-input {
+    width: 100%;
+}
+
+.form-control .form-control__label {
+    display: none;
+}
+
+.rc-input::part(form-control-label) {
+    position: absolute;
+    bottom: 32px;
+}
+
+.form-control .form-control__help-text {
+    display: none;
+}
+
+.input {
+    flex: 1 1 auto;
+    display: inline-flex;
+    align-items: stretch;
+    justify-content: start;
+    position: relative;
+    width: 100%;
+    font-family: var(--sl-input-font-family);
+    font-weight: var(--sl-input-font-weight);
+    letter-spacing: var(--sl-input-letter-spacing);
+    vertical-align: middle;
+    overflow: hidden;
+    cursor: text;
+    transition: var(--sl-transition-fast) color, var(--sl-transition-fast) border, var(--sl-transition-fast) box-shadow, var(--sl-transition-fast) background-color;
+}
+
+.input--standard {
+    background-color: var(--sl-input-background-color);
+    border: solid var(--sl-input-border-width) var(--sl-input-border-color);
+}
+
+.input--medium {
+    border-radius: var(--sl-input-border-radius-medium);
+    font-size: var(--sl-input-font-size-medium);
+    height: var(--sl-input-height-medium);
+}
+
+.rc-input::part(base) {
+    background-color: var(--sl-color-neutral-0);
+    height: 32px;
+    font-size: var(--sl-font-size-small);
+}
+
+.input__prefix, .input__suffix {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    cursor: default;
+}
+
+.input__control {
+    flex: 1 1 auto;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    min-width: 0px;
+    height: 100%;
+    color: var(--sl-input-color);
+    border: none;
+    background: inherit;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+    cursor: inherit;
+    appearance: none;
+}
+
+.input--medium .input__control {
+    height: calc(var(--sl-input-height-medium) - var(--sl-input-border-width)* 2);
+    padding: 0 var(--sl-input-spacing-medium);
+}
+
+.rc-input::part(input) {
+    transition: background-color var(--sl-transition-medium);
+    height: 28px;
+    padding: 0 var(--sl-input-spacing-small);
 }
