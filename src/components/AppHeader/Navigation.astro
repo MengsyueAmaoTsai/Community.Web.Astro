@@ -1,31 +1,15 @@
 ---
-const items = [
-    {
-        title: 'Home',
-        route: '/',
-    },
-    {
-        title: 'Trading apps',
-        route: '/trading-apps',
-    },
-    {
-        title: 'Signal sources',
-        route: '/signal-sources',
-    },
-    {
-        title: 'About',
-        route: '/about',
-    },
-]
+import { NAVIGATION_ITEMS } from "../../constants";
 ---
+
 <div class="navbar-button-group">
     {
-        items.map(item => (
-        <div class="item-button">
-            <a href={ item.route }>
-                <div class="tab-label">{ item.title }</div>
-            </a>
-        </div>
+        NAVIGATION_ITEMS.map(item => (
+            <div class="item-button">
+                <a href={ item.route }>
+                    <div class="tab-label">{ item.title }</div>
+                </a>
+            </div>
         ))
     }
 </div>
