@@ -45,7 +45,18 @@ const pages = [
         <div class="right-elements">
             <div class="mobile-button-container"></div>
             <AutoCompleteAppSearch></AutoCompleteAppSearch>
-            <div class="right-button-container"></div>
+            <div class="right-button-container">
+                <div class="store-button-container">
+                    <Button href="/">
+                        <div class="row">
+                            <img class="small-logo" src="https://apps.microsoft.com/assets/icons/dark-logo-32x32.png">
+                            <span class="open-store-text">Open Store app</span>
+                        </div>                            
+                    </Button>
+                </div>
+
+                <div class="lazy-load">Sign in</div>
+            </div>
         </div>
     </div>
 </div>
@@ -79,5 +90,45 @@ const pages = [
         flex-direction: row;
         width: 100%;
         justify-content: flex-end;
+    }
+
+    .right-button-container {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .small-logo {
+        position: relative;
+        width: 1rem;
+        height: 1rem;
+        align-self: center;
+        margin-inline-end: 0.25rem;
+    }
+
+    .open-store-btn {
+        @media (max-width: 1231px) {
+            & .small-logo {
+                margin-inline-end: 0px !important;
+                top: 7px;
+            }
+        }
+    }    
+
+    .open-store-text {
+        position: relative;
+    }
+
+    .open-store-btn {
+        @media (max-width: 1231px) {
+            & .open-store-text {
+                display: none;
+            }
+        }
     }
 </style>
