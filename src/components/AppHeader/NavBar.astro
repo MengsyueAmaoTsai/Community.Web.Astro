@@ -1,5 +1,7 @@
 ---
+import { NAVIGATION_ITEMS } from "../../constants";
 import Button from "../Button.astro";
+import ButtonGroup from "../ButtonGroup.astro";
 import BrandLogoLink from "./BrandLogoLink.astro";
 ---
 
@@ -9,6 +11,16 @@ import BrandLogoLink from "./BrandLogoLink.astro";
 
         <div class="nav-buttons-container">
             <BrandLogoLink></BrandLogoLink>
+
+            <ButtonGroup>
+                {
+                    NAVIGATION_ITEMS.map(item => (
+                        <Button href={item.route}>
+                            <span class="tab-label">{item.title}</span>
+                        </Button>
+                    ))
+                }
+            </ButtonGroup>
         </div>
 
         <div class="right-elements">

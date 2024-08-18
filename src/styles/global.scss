@@ -614,6 +614,10 @@ nav {
     justify-content: flex-end;
 }
 
+.tab-label {
+    all: unset;
+}
+
 // Header - Logo link
 .home-logo-link {
     display: flex;
@@ -761,4 +765,16 @@ nav {
     min-height: 0px;
     text-wrap: wrap;
     font-family: var(--body-font);
+}
+
+// Button group
+.rc-button-group {
+    align-self: center;
+    --track-color: transparent;
+    position: relative;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: nowrap;
 }
