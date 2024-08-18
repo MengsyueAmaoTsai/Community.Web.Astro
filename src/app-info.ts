@@ -1,4 +1,4 @@
-class AppInfo {
+export class AppInfo {
 	public static readonly id = "RichillCapital.Community.Web";
 	public static readonly name = "Richill Capital Community";
 	public static readonly description =
