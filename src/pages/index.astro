@@ -1,13 +1,16 @@
 ---
-import ButtonComponent from '../components/ButtonComponent.astro';
-import CardComponent from '../components/CardComponent.astro';
-import DropdownComponent from '../components/DropdownComponent.astro';
-import MenuComponent from '../components/MenuComponent.astro';
+import ButtonComponent from '../components/ButtonComponent/ButtonComponent.astro';
+import CardComponent from '../components/CardComponent/CardComponent.astro';
+import DropdownComponent from '../components/DropdownComponent/DropdownComponent.astro';
+import MenuComponent from '../components/MenuComponent/MenuComponent.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout pageTitle="Home">
-    <ButtonComponent>
+    <ButtonComponent href="/">
+        <span>
+            Download
+        </span>
     </ButtonComponent>
     
     <DropdownComponent>
