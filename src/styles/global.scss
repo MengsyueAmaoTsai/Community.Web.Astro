@@ -604,6 +604,18 @@ h1, h2, h3, h4, h5 {
     margin-top: 0px;
 }
 
+.privacy-container {
+    display: flex;
+}
+
+.privacy-icon {
+    display: flex;
+    align-self: center;
+    width: 32px;
+    height: 32px;
+    padding-inline-end: 4px;
+}
+
 .footer-secondary-menu {
     margin: 48px 0px 24px;
     display: flex;

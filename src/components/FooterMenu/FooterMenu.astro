@@ -1,6 +1,7 @@
 ---
 import { FOOTER_LINKS, FOOTER_MENU_GROUPS } from "../../constants";
 import Button from "../Button.astro";
+import LanguageSelector from "./LanguageSelector.astro";
 
 ---
 
@@ -27,6 +28,11 @@ import Button from "../Button.astro";
             
                 <div class="footer-secondary-menu">
                     <div class="sec-container">
+                        <LanguageSelector></LanguageSelector>
+                        <a class="privacy-container" target="_blank">
+                            <img class="privacy-icon" src="https://apps.microsoft.com/assets/icons/privacyoptions.svg">
+                            <Button href="">Your Privacy Choices</Button>
+                        </a>
                     </div>
                 
                     <div class="sec-container">
