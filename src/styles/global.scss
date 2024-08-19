@@ -446,7 +446,7 @@
     
     --border-width: 1px;
     --border-color: hsl(240 4.6% 22%);
-
+    --header-spacing: 1.25rem;
     --padding: 1.25rem;
 
     --sl-card-header-margin: 0 1.5rem;
@@ -1087,6 +1087,16 @@ nav {
     height: 100%;
 }
 
+.description {
+    white-space: pre-wrap;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    max-height: 95px;
+}
+
 // Card 
 .rc-card {
     --border-radius: var(--sl-border-radius-large);
@@ -1263,4 +1273,125 @@ nav {
     .rc-divider {
         --color: #FFFFFF15 !important;
     }
+}
+
+// DIALOG
+.dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    inset: 0px;
+    z-index: var(--sl-z-index-dialog);
+}
+
+.dialog__overlay {
+    position: fixed;
+    inset: 0px;
+    background-color: var(--sl-overlay-background-color);
+}
+
+.rc-dialog::part(overlay) {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.dialog__panel {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    width: var(--width);
+    max-width: calc(100% - var(--sl-spacing-2x-large));
+    max-height: calc(100% - var(--sl-spacing-2x-large));
+    background-color: var(--sl-panel-background-color);
+    border-radius: var(--sl-border-radius-medium);
+    box-shadow: var(--sl-shadow-x-large);
+}
+
+.dialog--open .dialog__panel {
+    display: flex;
+    opacity: 1;
+}
+
+.rc-dialog::part(panel) {
+    width: 950px;
+    min-width: 350px;
+    max-height: 626px;
+    background-color: rgb(243, 243, 243);
+    border-radius: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .rc-dialog::part(panel) {
+        background-color: rgb(32, 32, 32);
+    }
+}
+
+.dialog__header {
+    flex: 0 0 auto;
+    display: flex;
+}
+
+.rc-dialog::part(header) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+    .rc-dialog::part(header) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.082);
+    }
+}
+
+.dialog__body {
+    flex: 1 1 auto;
+    display: block;
+    padding: var(--body-spacing);
+    overflow: auto;
+}
+
+.rc-dialog::part(body) {
+    padding: 20px 32px;
+}
+
+.dialog__footer {
+    flex: 0 0 auto;
+    text-align: right;
+    padding: var(--footer-spacing);
+}
+
+.dialog:not(.dialog--has-footer) .dialog__footer {
+    display: none;
+}
+
+.dialog__title {
+    flex: 1 1 auto;
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-size-adjust: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: var(--sl-font-size-large);
+    line-height: var(--sl-line-height-dense);
+    padding: var(--header-spacing);
+    margin: 0px;
+}
+
+.rc-dialog::part(title) {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 12px 32px;
+}
+
+.dialog__header-actions {
+    flex-shrink: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    gap: var(--sl-spacing-2x-small);
+    padding: 0 var(--header-spacing);
 }

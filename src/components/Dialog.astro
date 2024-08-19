@@ -1,0 +1,25 @@
+<div class="rc-dialog">
+    <div part="base" class="dialog dialog--open">
+        <div part="overlay" class="dialog__overlay"></div>
+        <div part="panel" class="dialog__panel">
+            <header part="header" class="dialog__header">
+                <h2 part="title" class="dialog__title">
+                    <slot name="label"/>
+                </h2>
+
+                <div part="header-actions" class="dialog__header-actions">
+                    <slot name="header-actions"/>
+                    <!-- Icon button -->
+                </div>
+            </header>
+
+            <div part="body" class="dialog__body">
+                <slot />
+            </div>
+
+            <footer part="footer" class="dialog__footer">
+                <slot name="footer"/>
+            </footer>
+        </div>
+    </div>
+</div>
