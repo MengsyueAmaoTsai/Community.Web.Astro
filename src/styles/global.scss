@@ -1161,3 +1161,79 @@ nav {
     width: var(--right-side);
     overflow: visible;
 }
+
+// Buy Box
+.psi-container {
+    display: flex;
+    flex-direction: column;
+    height: 87px;
+}
+
+.buy-box {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    transition: all ease-in-out var(--sl-transition-medium);
+}
+
+.post-download-text {
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0;
+    top: 4px;
+    color: var(--sl-color-neutral-600);
+}
+
+@media (prefers-color-scheme: dark) {
+    .buy-info, .white-download-text, .post-download-text {
+        color: #FFFFFFC8 !important;
+    }
+}
+
+.psi-cta-container {
+    display: flex;
+    flex-direction: row !important;
+    gap: 12px;
+}
+
+.margin-download {
+    margin-block-start: 21px;
+}
+
+.buy-box .buy-info {
+    display: flex;
+    gap: var(--sl-spacing-x-small);
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--sl-color-neutral-600);
+    margin-bottom: 0;
+    align-items: center;
+}
+
+.view-in-store-container {
+    display: flex;
+    flex-direction: row;
+    height: 46px;
+    align-items: center;
+    gap: 8px;
+}
+
+.store-icon {
+    width: 18px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .view-in-store-text {
+        color: var(--sl-default-white) !important;
+    }
+}
+
+.view-in-store-text {
+    font-size: 18px;
+    font-weight: var(--sl-font-weight-semibold);
+    font-family: var(--body-font);
+    color: var(--sl-color-neutral-700);
+}

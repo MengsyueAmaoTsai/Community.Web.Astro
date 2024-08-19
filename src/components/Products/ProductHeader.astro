@@ -1,5 +1,6 @@
 ---
 import Button from "../Button.astro";
+import BuyBox from "./BuyBox.astro";
 
 const { productId, productName } = Astro.props;
 ---
@@ -25,7 +26,7 @@ const { productId, productName } = Astro.props;
             </div>
     
             <div class="buy-box-container">
-    
+                <BuyBox></BuyBox>
             </div>
         </div>
     </div>
