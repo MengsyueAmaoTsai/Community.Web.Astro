@@ -1237,3 +1237,30 @@ nav {
     font-family: var(--body-font);
     color: var(--sl-color-neutral-700);
 }
+
+// Divider
+:host([vertical]) {
+    display: inline-block;
+    height: 100%;
+    border-left: solid var(--width) var(--color);
+    margin: 0 var(--spacing);
+}
+
+.rc-divider {
+    height: 0.875rem;
+    --spacing: var(--sl-spacing-2x-small);
+    --color: var(--theme-divider-color);
+}
+
+.rc-divider {
+    height: 22px;
+    --spacing: var(--sl-spacing-2x-small);
+    --color: #00000014;
+    --width: var(--sl-panel-border-width);
+}
+
+@media (prefers-color-scheme: dark) {
+    .rc-divider {
+        --color: #FFFFFF15 !important;
+    }
+}

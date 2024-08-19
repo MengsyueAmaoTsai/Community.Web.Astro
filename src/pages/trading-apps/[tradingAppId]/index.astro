@@ -14,7 +14,7 @@ const tradingApp = await apiService.getTradingAppById(tradingAppId as string);
 
 <Layout pageTitle={tradingApp.name}>
     <div class="details-container product-details">
-        <ProductHeader productId={tradingApp.id} productName={tradingApp.name}></ProductHeader>
+        <ProductHeader productId={tradingApp.id} productName={tradingApp.name} category={tradingApp.category}></ProductHeader>
         
         <div class="details two-column">
             <div class="left-side">

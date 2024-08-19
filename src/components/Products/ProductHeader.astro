@@ -1,8 +1,9 @@
 ---
 import Button from "../Button.astro";
+import Divider from "../Divider.astro";
 import BuyBox from "./BuyBox.astro";
 
-const { productId, productName } = Astro.props;
+const { productId, productName, category } = Astro.props;
 ---
 
 <div>
@@ -23,6 +24,13 @@ const { productId, productName } = Astro.props;
             </p>
     
             <div class="reviews-age-rating-container">
+                <div></div>
+                <Divider/>
+                <div></div>
+                <Divider/>
+                <div>
+                    <p class="subtitle">{ category }</p>
+                </div>
             </div>
     
             <div class="buy-box-container">
